@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111022152919) do
+ActiveRecord::Schema.define(:version => 20111022184532) do
+
+  create_table "account_words", :force => true do |t|
+    t.integer  "account_id",                    :null => false
+    t.integer  "word_id",                       :null => false
+    t.integer  "register_count", :default => 1, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "account_words", ["account_id", "word_id"], :name => "index_account_words_on_account_id_and_word_id", :unique => true
+  add_index "account_words", ["created_at"], :name => "index_account_words_on_created_at"
+  add_index "account_words", ["register_count"], :name => "index_account_words_on_register_count"
+  add_index "account_words", ["updated_at"], :name => "index_account_words_on_updated_at"
 
   create_table "accounts", :force => true do |t|
     t.integer  "uid",        :null => false
