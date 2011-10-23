@@ -1,5 +1,8 @@
 en:
   # common
+  word:
+    button:
+      create: "Add"
 
   # model
 
@@ -14,8 +17,3 @@ en:
       link:
         sign_in_with: "Sign In with %{provider}"
         log_out: "Log Out"
-
-  static:
-    welcome:
-      button:
-        create: "Add"

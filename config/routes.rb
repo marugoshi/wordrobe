@@ -9,6 +9,6 @@ Reaper::Application.routes.draw do
   match "/words/autocomplete_word_name" => "words#autocomplete_word_name", :as => "autocomplete_word_name_words", :via => :get
 
   namespace :accounts do
-    resources :words
+    resources :words, :only => [:index, :create, :destroy]
   end
 end
