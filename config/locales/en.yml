@@ -1,5 +1,19 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  # common
+
+  # model
+
+  # model label
+
+  # controller & view
+  layout:
+    application:
+
+  static:
+    welcome:
+      message:
+        sign_in: "Please Sign In"
+        welcome: "Welcome %{name}!"
+      link:
+        sign_in_with: "Sign In with %{provider}"
+        log_out: "Logout"

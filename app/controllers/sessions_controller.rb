@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:acconut_id] = nil
-    redirect_to sign_in_path
+    session[:account_id] = nil
+    redirect_to welcome_path
   end
 end
