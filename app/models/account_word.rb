@@ -11,4 +11,5 @@ class AccountWord < ActiveRecord::Base
   attr_protected :created_at, :updated_at
 
   scope :by, lambda { |account_id| where("account_words.account_id = account_id") }
+  scope :one_by, lambda { |account_id, word_id| where("account_words.account_id = account_id AND account_words.word_id = word_id") }
 end
