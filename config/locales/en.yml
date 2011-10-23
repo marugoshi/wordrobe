@@ -17,3 +17,5 @@ en:
 
   static:
     welcome:
+      button:
+        create: "Add"
