@@ -6,14 +6,14 @@ en:
   # model label
 
   # controller & view
-  layout:
+  layouts:
     application:
-
-  static:
-    welcome:
       message:
         sign_in: "Please Sign In"
         welcome: "Welcome %{name}!"
       link:
         sign_in_with: "Sign In with %{provider}"
-        log_out: "Logout"
+        log_out: "Log Out"
+
+  static:
+    welcome:

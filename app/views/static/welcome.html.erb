@@ -1,11 +1,3 @@
 <% if current_account %>
-  <div id="welcome"><%= t(".message.welcome", :name => current_account.name) %>
-  <ul>
-    <li><%= link_to t(".link.log_out"), log_out_path, :method => :delete %></li>
-  </ul>
-<% else %>
-  <div id="sign_in"><%= t(".message.sign_in") %></div>
-  <ul>
-    <li><%= link_to t(".link.sign_in_with", :provider => "facebook"), "/auth/facebook" %></li>
-  </ul>
+test
 <% end %>
