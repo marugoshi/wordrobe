@@ -11,7 +11,6 @@ gem "haml"
 gem "sass"
 
 gem "omniauth"
-gem "acts-as-taggable-on"
 
 gem "rails3-jquery-autocomplete"
 
