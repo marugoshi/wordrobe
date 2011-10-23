@@ -5,4 +5,6 @@ Reaper::Application.routes.draw do
 
   match "/" => "static#welcome", :as => "welcome", :via => :get
   match "/dashboard" => "accounts#dashboard", :as => "dashboard", :via => :get
+
+  match "/words/autocomplete_word_name" => "words#autocomplete_word_name", :as => "autocomplete_word_name_words", :via => :get
 end

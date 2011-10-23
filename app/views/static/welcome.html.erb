@@ -1,3 +1,4 @@
 <% if current_account %>
-test
+  <%= form_tag 'some/path' %>
+    <%= autocomplete_field_tag "word", "", autocomplete_word_name_words_path, :size => 75 %>
 <% end %>

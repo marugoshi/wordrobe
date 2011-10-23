@@ -41,11 +41,11 @@ ActiveRecord::Schema.define(:version => 20111022184532) do
   add_index "accounts", ["updated_at"], :name => "index_accounts_on_updated_at"
 
   create_table "words", :force => true do |t|
-    t.string   "word",       :null => false
+    t.string   "name",       :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "words", ["word"], :name => "index_words_on_word", :unique => true
+  add_index "words", ["name"], :name => "index_words_on_name", :unique => true
 
 end
