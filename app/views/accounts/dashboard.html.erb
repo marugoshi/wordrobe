@@ -1,0 +1,9 @@
+<%= form_tag "accounts/words", :method => :post %>
+  <%= autocomplete_field_tag "word", "", autocomplete_word_name_words_path, :size => 30 %>
+  <%= submit_tag t("word.button.create") %>
+
+<ul>
+  <% @words_belonged.each do |word| %>
+    <li><%= word.word.name %>(<%= word.register_count %>)</li>
+  <% end %>
+</ul>
