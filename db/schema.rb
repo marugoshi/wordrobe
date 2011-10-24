@@ -14,9 +14,10 @@
 ActiveRecord::Schema.define(:version => 20111022184532) do
 
   create_table "account_words", :force => true do |t|
-    t.integer  "account_id",                    :null => false
-    t.integer  "word_id",                       :null => false
-    t.integer  "register_count", :default => 1, :null => false
+    t.integer  "account_id",                        :null => false
+    t.integer  "word_id",                           :null => false
+    t.integer  "register_count", :default => 0,     :null => false
+    t.boolean  "memorized",      :default => false, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
