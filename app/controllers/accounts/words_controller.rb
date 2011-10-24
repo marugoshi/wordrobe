@@ -11,9 +11,16 @@ class Accounts::WordsController < ApplicationController
     redirect_to dashboard_path
   end
 
-  def memorize
-  end
-
-  def forget
+  def toggle_memorize
+    # TODO raise exception if word_belonged does not exist.
+    word_belonged = AccountWord.by(current_account.id).where("id = ?", params[:word_id]).first()
+    word_belonged.memorized = params[:memorized]
+    word_belonged.save!
+    if params[:from] == "dashboard"
+      @words_belonged = AccountWord.by(current_account.id).for_dashboard
+    else
+      @words_belonged = AccountWord.by(current_account.id)
+    end
+    render :partial => "accounts/words/words_belonged"
   end
 end

@@ -10,6 +10,8 @@ Reaper::Application.routes.draw do
   match "/words/oops" => "words#oops_no_word", :as => "oops_no_word", :via => :get
 
   namespace :accounts do
-    resources :words, :only => [:index, :create, :destroy]
+    resources :words, :only => [:index, :create] do
+      match "toggle_memorize", :as => "toggle_memorize", :via => :put
+    end
   end
 end

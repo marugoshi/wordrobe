@@ -3,6 +3,8 @@ en:
   word:
     button:
       create: "Add"
+      memorize: "X"
+      forget: "O"
 
   # model
 
