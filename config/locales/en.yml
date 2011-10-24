@@ -17,3 +17,7 @@ en:
       link:
         sign_in_with: "Sign In with %{provider}"
         log_out: "Log Out"
+
+  words:
+    oops_no_word:
+      sorry: "Oops! Sorry the word you typed is not registered our dictionary."
