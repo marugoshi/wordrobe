@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   def login_required
     unless current_account
       session[:attempted_path] = ::Rack::Request.new(env).fullpath
-      redirect_to sign_in_path
+      redirect_to welcome_path
     end
   end
 
