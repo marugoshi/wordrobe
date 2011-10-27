@@ -11,5 +11,11 @@ class AccountWord < ActiveRecord::Base
   attr_protected :created_at, :updated_at
 
   scope :by, lambda { |account_id| where("account_id = ?", account_id) }
-  scope :for_dashboard, lambda { limit(10) }
+  scope :for_dashboard, limit(10)
+  scope :count_asc, order("register_count ASC")
+  scope :count_desc, order("register_count DESC")
+  scope :created_asc, order("created_at ASC")
+  scope :created_desc, order("created_at DESC")
+
+  default_scope self.count_desc
 end
