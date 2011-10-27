@@ -16,14 +16,14 @@ class Accounts::WordsController < ApplicationController
     word_belonged = current_account.account_words.where("id = ?", params[:word_id]).first()
     word_belonged.memorized = !word_belonged.memorized?
     word_belonged.save!
-    @words_belonged = current_account.account_words
+    @wordrobe = current_account.account_words
     render :partial => "accounts/words/words_belonged"
   end
 
   def destroy_with_ajax
     word_belonged = current_account.account_words.where("id = ?", params[:word_id]).first()
     word_belonged.delete
-    @words_belonged = current_account.account_words
+    @wordrobe = current_account.account_words
     render :partial => "accounts/words/words_belonged"
   end
 end
