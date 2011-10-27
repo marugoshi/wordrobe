@@ -5,13 +5,13 @@ gem "rack", "1.3.3"
 gem "rails"
 gem "pg"
 
-gem "jquery-rails"
 gem "settingslogic"
 gem "haml"
 gem "sass"
 
 gem "omniauth"
 
+gem "jquery-rails"
 gem "rails3-jquery-autocomplete"
 
 group :assets do
