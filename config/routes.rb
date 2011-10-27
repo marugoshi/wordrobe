@@ -11,7 +11,8 @@ Reaper::Application.routes.draw do
 
   namespace :accounts do
     resources :words, :only => [:index, :create] do
-      match "toggle_memorize", :as => "toggle_memorize", :via => :put
+      match "toggle_memorize", :action => "toggle_memorize_with_ajax", :as => "toggle_memorize", :via => :put
+      match "destroy", :action => "destroy_with_ajax", :as => "destroy", :via => :delete
     end
   end
 end

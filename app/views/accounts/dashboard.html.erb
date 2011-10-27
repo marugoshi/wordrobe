@@ -1,16 +1,16 @@
 <script type="text/javascript">
 $(function() {
-  $("a[data-update]")
-    .live("ajax:success", function(data, status, xhr) {
-      var link = $(this);
-      $("#" + link.attr("data-update")).html(status);
+  $(".update_word_list")
+    .live("ajax:success", function(event, data) {
+      $("#word_list").html(data);
     });
 });
 </script>
 
-<%= form_tag "accounts/words", :method => :post %>
+<%= form_tag "accounts/words", :method => :post do %>
   <%= autocomplete_field_tag "word", "", autocomplete_word_name_words_path, :size => 30 %>
   <%= submit_tag t("word.button.create") %>
+<% end %>
 
 <div id="word_list">
   <%= render :partial => "accounts/words/words_belonged" %>
