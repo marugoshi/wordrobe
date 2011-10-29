@@ -7,7 +7,7 @@ module Accounts::WordsHelper
       :remote => true,
       "data-type" => "html",
       :method => :put,
-      :class => "update_word_list"
+      :class => "update_wordrobe"
     )
     remove_link_text = "remove"
     remove_link = link_to(
@@ -16,7 +16,7 @@ module Accounts::WordsHelper
       :remote => true,
       "data-type" => "html",
       :method => :delete,
-      :class => "update_word_list"
+      :class => "update_wordrobe"
     )
     "<li>#{toggle_link}&nbsp;#{word.word.name}&nbsp;(#{word.register_count})&nbsp;#{remove_link}</li>"
   end

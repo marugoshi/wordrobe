@@ -1,8 +1,8 @@
 <script type="text/javascript">
 $(function() {
-  $(".update_word_list")
-    .live("ajax:success", function(event, data) {
-      $("#word_list").html(data);
+  $(".update_wordrobe")
+    .live("ajax:success", function(event, data, xhr) {
+      $("#wordrobe").html(data);
     });
 });
 </script>
@@ -12,6 +12,6 @@ $(function() {
   <%= submit_tag t("word.button.create") %>
 <% end %>
 
-<div id="word_list">
+<div id="wordrobe">
   <%= render :partial => "accounts/words/wordrobe" %>
 </div>
