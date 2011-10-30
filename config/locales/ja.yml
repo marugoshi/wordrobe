@@ -22,9 +22,11 @@ ja:
         welcome: "Welcome %{name}!"
       link:
         log_out: "Log Out"
-    welcome:
+
+  static:
+    sign_in:
       message:
-        sign_in: "Please Sign In"
+        need_id: "ログインには%{provider} IDが必要です。"
       link:
         sign_in_with: "%{provider} IDでログイン"
 
