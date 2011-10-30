@@ -1,6 +1,8 @@
 ja:
   # common
-  word:
+
+
+  wordrobe:
     button:
       create: "Add"
       memorize: "X"
@@ -12,14 +14,19 @@ ja:
 
   # controller & view
   layouts:
-    application:
+    logo:
       message:
         lead: "覚えたい単語をしまっておこう。Wordrobeは単語を覚えるためのツールです。"
-        sign_in: "Please Sign In"
+    wordrobe:
+      message:
         welcome: "Welcome %{name}!"
       link:
-        sign_in_with: "%{provider} IDでログイン"
         log_out: "Log Out"
+    welcome:
+      message:
+        sign_in: "Please Sign In"
+      link:
+        sign_in_with: "%{provider} IDでログイン"
 
   words:
     oops_no_word:

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-class AccountWord < ActiveRecord::Base
+class Wordrobe < ActiveRecord::Base
   belongs_to :account
   belongs_to :word
 

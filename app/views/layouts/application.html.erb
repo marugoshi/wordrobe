@@ -7,26 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
 <div class="container">
-
-<div id="header">
-  <h1 id="logo">Wordrobe</h1>
-  <p id="lead">覚えたい単語をしまっておこう。Wordrobeは単語を覚えるためのツールです。</p>
-</div>
-
-<% if current_account %>
-  <div id="welcome"><%= t(".message.welcome", :name => current_account.name) %>
-  <ul>
-    <li><%= link_to t(".link.log_out"), log_out_path, :method => :delete %></li>
-  </ul>
-<% else %>
-  <div id="sign_in"><%= t(".message.sign_in") %></div>
-  <div id="sign_in_with_facebook"><%= link_to t(".link.sign_in_with", :provider => "facebook"), "/auth/facebook", :class => "btn primary" %></div>
-<% end %>
-
 <%= yield %>
-
 </div>
 </body>
 </html>

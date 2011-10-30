@@ -1,9 +1,10 @@
+# -*- coding: utf-8 -*-
 module Accounts::WordsHelper
   def word_row(word)
-    toggle_link_text = word.memorized? ? t("word.button.forget") : t("word.button.memorize")
+    toggle_link_text = word.memorized? ? t("wordrobe.button.forget") : t("wordrobe.button.memorize")
     toggle_link = link_to(
       toggle_link_text,
-      accounts_word_toggle_memorize_path(word, :for => "for_dashboard"),
+      accounts_wordrobe_toggle_memorize_path(word, :for => "for_dashboard"),
       :remote => true,
       "data-type" => "html",
       :method => :put,
@@ -12,7 +13,7 @@ module Accounts::WordsHelper
     remove_link_text = "remove"
     remove_link = link_to(
       remove_link_text,
-      accounts_word_destroy_path(word, :for => "for_dashboard"),
+      accounts_wordrobe_destroy_path(word, :for => "for_dashboard"),
       :remote => true,
       "data-type" => "html",
       :method => :delete,

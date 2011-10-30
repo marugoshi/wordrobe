@@ -1,5 +1,4 @@
-<% if current_account %>
-  <%= form_tag "accounts/words", :method => :post %>
-    <%= autocomplete_field_tag "word", "", autocomplete_word_name_words_path, :size => 30 %>
-    <%= submit_tag t("word.button.create") %>
-<% end %>
+<%= render :partial => "layouts/logo" %>
+
+<div id="sign_in"><%= t(".message.sign_in") %></div>
+<div id="sign_in_with_facebook"><%= link_to t(".link.sign_in_with", :provider => "Facebook"), "/auth/facebook", :class => "btn primary" %></div>

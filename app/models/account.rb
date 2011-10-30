@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 class Account < ActiveRecord::Base
-  has_many :account_words, :dependent => :destroy
-  has_many :words, :through => :account_words
+  has_many :wordrobes, :dependent => :destroy
+  has_many :words, :through => :wordrobes
 
   validates :uid, :presence => true
   validates :name, :presence => true
