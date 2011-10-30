@@ -1,0 +1,26 @@
+ja:
+  # common
+  word:
+    button:
+      create: "Add"
+      memorize: "X"
+      forget: "O"
+
+  # model
+
+  # model label
+
+  # controller & view
+  layouts:
+    application:
+      message:
+        lead: "覚えたい単語をしまっておこう。Wordrobeは単語を覚えるためのツールです。"
+        sign_in: "Please Sign In"
+        welcome: "Welcome %{name}!"
+      link:
+        sign_in_with: "%{provider} IDでログイン"
+        log_out: "Log Out"
+
+  words:
+    oops_no_word:
+      sorry: "Oops! Sorry the word you typed is not registered our dictionary."
