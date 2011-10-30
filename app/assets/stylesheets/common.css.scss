@@ -1,0 +1,18 @@
+body {
+  background-image: url("/assets/common/square_bg.png");
+}
+
+#header h1#logo {
+  background-image: url("/assets/common/logo.png");
+  width: 365px;
+  height: 44px;
+  text-indent: -9999px;
+  margin: 50px 0px 5px 0px;
+}
+
+#header p#lead {
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: 0 1px 0 rgba(10, 10, 10, 0.2);
+  margin-left: 4px;
+}
