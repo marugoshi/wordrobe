@@ -1,12 +1,3 @@
-<script type="text/javascript">
-$(function() {
-  $(".update_wordrobe")
-    .live("ajax:success", function(event, data, xhr) {
-      $("#wordrobe").html(data);
-    });
-});
-</script>
-
 <%= form_tag "accounts/words", :method => :post do %>
   <%= autocomplete_field_tag "word", "", autocomplete_word_name_words_path, :size => 30 %>
   <%= submit_tag t("word.button.create") %>
