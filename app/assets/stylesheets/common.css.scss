@@ -1,18 +1,30 @@
 body {
-  background-image: url("/assets/common/square_bg.png");
+  background-color: #555;
 }
 
-#footer {
-  background-color: #000;
-  height: 50px;
+#bg {
+  background-color: #fff;
+  background-image: url("/assets/common/bg_grayscale.png");
+}
+
+#shadow {
+  background-image: url("/assets/common/bg_copyright.png");
+  height: 20px;
+}
+
+#copyright {
+  color: #eee;
+  text-align: right;
+  font-size: 11px;
+  padding: 10px 20px 30px 0;
 }
 
 #welcome {
-  margin: 260px 0 0 0;
+  margin: 190px 0 0 0;
 }
 
 #welcome #sign_in {
-  margin: 30px 0 260px 20px;  
+  margin: 20px 0 140px 20px;  
 }
 
 #welcome #sign_in #need_id {
@@ -29,7 +41,7 @@ body {
 }
 
 #header p#lead {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: bold;
   text-shadow: 0 1px 0 rgba(10, 10, 10, 0.2);
   margin-left: 4px;

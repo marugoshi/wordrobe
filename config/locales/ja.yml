@@ -16,7 +16,7 @@ ja:
   layouts:
     logo:
       message:
-        lead: "覚えたい単語をしまっておこう。Wordrobeは単語を覚えるためのツールです。"
+        lead: "覚えられない英単語を入れるだけの超ミニマルアプリ。(手抜きじゃないよ！)"
     wordrobe:
       message:
         welcome: "Welcome %{name}!"
