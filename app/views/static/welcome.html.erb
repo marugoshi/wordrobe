@@ -1,4 +1,8 @@
 <div id="welcome">
-  <%= render :partial => "layouts/logo" %>
-  <%= render :partial => "sign_in" %>
+  <h1 id="logo">Wordrobe</h1>
+  <p id="lead"><%= t(".message.lead") %></p>
+  <div id="sign_in">
+    <p id="need_id"><%= t(".message.need_id", :provider => "Facebook") %></p>
+    <p id="sign_in_with"><%= link_to t(".link.sign_in_with", :provider => "Facebook"), "/auth/facebook", :class => "btn" %></p>
+  </div>
 </div>

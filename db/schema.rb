@@ -14,15 +14,19 @@
 ActiveRecord::Schema.define(:version => 20111022184532) do
 
   create_table "accounts", :force => true do |t|
-    t.integer  "uid",        :null => false
-    t.string   "name",       :null => false
+    t.integer  "uid",          :null => false
+    t.string   "first_name",   :null => false
+    t.string   "last_name",    :null => false
     t.string   "nickname"
+    t.text     "image_url"
+    t.text     "facebook_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "accounts", ["created_at"], :name => "index_accounts_on_created_at"
-  add_index "accounts", ["name"], :name => "index_accounts_on_name"
+  add_index "accounts", ["first_name"], :name => "index_accounts_on_first_name"
+  add_index "accounts", ["last_name"], :name => "index_accounts_on_last_name"
   add_index "accounts", ["nickname"], :name => "index_accounts_on_nickname"
   add_index "accounts", ["uid"], :name => "index_accounts_on_uid", :unique => true
   add_index "accounts", ["updated_at"], :name => "index_accounts_on_updated_at"

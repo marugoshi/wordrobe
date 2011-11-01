@@ -9,8 +9,13 @@ if Rails.env == "development"
     "provider" => "facebook",
     "uid" => 123456,
     "user_info" => {
-      "name" => "Makoto Tokuyama",
+      "first_name" => "Makoto",
+      "last_name" => "Tokuyama",
       "nickname" => "marugoshi",
+      "image_url" => "http://www.facebook.com/123456/picture?type=square",
+      "urls" => {
+        "Facebook" => "http://www.facebook.com/marugoshi"
+      }
     },
   }
 end

@@ -1,7 +1,5 @@
 ja:
   # common
-
-
   wordrobe:
     button:
       create: "Add"
@@ -14,18 +12,16 @@ ja:
 
   # controller & view
   layouts:
-    logo:
-      message:
-        lead: "覚えられない英単語を入れるだけの超ミニマルアプリ。(手抜きじゃないよ！)"
-    wordrobe:
+    header:
       message:
         welcome: "Welcome %{name}!"
       link:
-        log_out: "Log Out"
+        log_out: "ログアウト"
 
   static:
-    sign_in:
+    welcome:
       message:
+        lead: "覚えられない英単語を入れるだけの超ミニマルアプリ。(手抜きじゃないよ！)"
         need_id: "ログインには%{provider} IDが必要です。"
       link:
         sign_in_with: "%{provider} IDでログイン"

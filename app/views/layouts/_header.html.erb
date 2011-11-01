@@ -1,0 +1,16 @@
+<div id="header">
+  <div class="row">
+    <div class="span8">
+      <h1 id="logo">Wordrobe</h1>
+    </div>
+    <div class="span8">
+      <div>
+        <%= t(".message.welcome", :name => current_account.last_name) %>
+        <img src="<%= current_account.image_url %>" />
+        <ul>
+          <li><%= link_to t(".link.log_out"), log_out_path, :method => :delete %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

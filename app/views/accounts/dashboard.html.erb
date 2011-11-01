@@ -1,10 +1,4 @@
-<%= render :partial => "layouts/logo" %>
-
-<div><%= t(".message.welcome", :name => current_account.name) %>
-<ul>
-  <li><%= link_to t(".link.log_out"), log_out_path, :method => :delete %></li>
-</ul>
-</div>
+<%= render :partial => "layouts/header" %>
 
 <%= form_tag "accounts/wordrobes", :method => :post do %>
   <%= autocomplete_field_tag "word", "", autocomplete_word_name_words_path, :size => 30 %>
