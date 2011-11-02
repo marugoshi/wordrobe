@@ -14,8 +14,9 @@ ja:
   layouts:
     header:
       message:
-        welcome: "%{name} さん"
+        greeting: "%{name} さん、%{greeting}！"
       link:
+        dashboard: "トップ"
         log_out: "ログアウト"
 
   static:

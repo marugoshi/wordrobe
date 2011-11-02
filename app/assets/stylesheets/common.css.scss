@@ -1,6 +1,18 @@
+$link_normal_color: #0069D6;
+$link_hover_color: #00438A;
+
 /* <!-- common --> */
 body {
   background-color: #555;
+}
+
+a {
+  color: $link_normal_color;
+}
+
+a.hover {
+  color: $link_hover_color;
+  text-decoration: underline;  
 }
 
 #bg {
@@ -33,22 +45,22 @@ h1#logo {
 /* <!-- welcome --> */
 #welcome {
   margin: 190px 0 0 0;
-}
 
-#welcome p#lead {
-  font-size: 14px;
-  font-weight: bold;
-  text-shadow: 0 1px 0 rgba(10, 10, 10, 0.2);
-  margin-left: 4px;
-}
+  p#lead {
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 0 1px 0 rgba(10, 10, 10, 0.2);
+    margin-left: 4px;
+  }
 
-#welcome #sign_in {
-  margin: 20px 0 140px 20px;  
-}
+  #sign_in {
+    margin: 20px 0 140px 20px;  
 
-#welcome #sign_in #need_id {
-  font-size: 11px;
-  margin: 0 0 5px 0;
+    #need_id {
+      font-size: 11px;
+      margin: 0 0 5px 0;
+    }
+  }
 }
 /* <!-- /welcome --> */
 
@@ -56,15 +68,38 @@ h1#logo {
 /* <!-- common exclude static --> */
 #header {
   margin: 28px 0 10px 0;    
-}
 
-#header #profile_picture {
-  text-align: right;
-}
+  #picture {
+    text-align: right;
+  }
 
-#header #greeting {
-  margin: 6px 0 0 0;
-  font-weight: bold;
-}
+  #greeting {
+    margin: 2px 0 0 0;
+    font-weight: bold;
+  }
 
+  #menu {
+    margin:8px 0 0 0;
+
+    .pills {
+      a {
+        margin: 0 10px 0 0;
+        padding: 3px 5px 3px 5px;
+        line-height: 100%;
+        background: none;
+        color: $link_normal_color;
+        text-shadow: none;
+      }
+
+      a:hover {
+        color: $link_hover_color;
+        text-decoration: underline;
+      }
+
+      .active {
+        font-weight: bold;
+      }
+    }
+  }
+}
 /* <!-- /common exclude static --> */
