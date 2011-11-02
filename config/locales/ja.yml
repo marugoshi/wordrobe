@@ -14,14 +14,14 @@ ja:
   layouts:
     header:
       message:
-        welcome: "Welcome %{name}!"
+        welcome: "%{name} さん"
       link:
         log_out: "ログアウト"
 
   static:
     welcome:
       message:
-        lead: "覚えられない英単語を入れるだけの超ミニマルアプリ。(手抜きじゃないよ！)"
+        lead: "Wordrobeは覚えられない英単語を入れておく言葉の棚です。"
         need_id: "ログインには%{provider} IDが必要です。"
       link:
         sign_in_with: "%{provider} IDでログイン"

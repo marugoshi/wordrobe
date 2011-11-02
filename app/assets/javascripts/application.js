@@ -8,11 +8,4 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require autocomplete-rails
-
-// update wordrobe
-$(function() {
-  $(".update_wordrobe")
-    .live("ajax:success", function(event, data, xhr) {
-      $("#wordrobe").html(data);
-    });
-});
+//= require common

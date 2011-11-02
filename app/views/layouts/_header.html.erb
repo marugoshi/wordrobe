@@ -1,16 +1,16 @@
 <div id="header">
   <div class="row">
-    <div class="span8">
+    <div class="span9">
       <h1 id="logo">Wordrobe</h1>
     </div>
-    <div class="span8">
-      <div>
-        <%= t(".message.welcome", :name => current_account.last_name) %>
-        <img src="http://graph.facebook.com/<%= current_account.nickname %>/picture" />
-        <ul>
-          <li><%= link_to t(".link.log_out"), log_out_path, :method => :delete %></li>
-        </ul>
-      </div>
+    <div id="profile_picture" class="span2">
+      <img src="http://graph.facebook.com/<%= current_account.nickname %>/picture" width="50" height="50" alt="<%= current_account.nickname %>" />
+    </div>
+    <div class="span5">
+      <div id="greeting"><%= t(".message.welcome", :name => current_account.last_name) %></div>
+      <ul>
+        <li><%= link_to t(".link.log_out"), log_out_path, :method => :delete %></li>
+      </ul>
     </div>
   </div>
 </div>
