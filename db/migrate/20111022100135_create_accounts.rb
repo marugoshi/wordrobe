@@ -5,8 +5,6 @@ class CreateAccounts < ActiveRecord::Migration
       t.string :first_name, :null => false
       t.string :last_name, :null => false
       t.string :nickname
-      t.text :image_url
-      t.text :facebook_url
       t.timestamps
     end
     add_index :accounts, :uid, :unique => true
