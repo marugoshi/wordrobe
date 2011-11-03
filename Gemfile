@@ -9,7 +9,7 @@ gem "settingslogic"
 gem "haml"
 gem "sass"
 
-gem "omniauth"
+gem "omniauth", "0.3.2"
 
 gem "jquery-rails"
 gem "rails3-jquery-autocomplete"
