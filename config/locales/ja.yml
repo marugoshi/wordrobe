@@ -26,7 +26,7 @@ ja:
   static:
     welcome:
       message:
-        lead: "Wordrobeは覚えられない英単語を入れておく言葉の棚です。"
+        lead: "Wordrobeは覚えられない英単語を入れておく言葉の収納棚です。"
         need_id: "ログインには%{provider} IDが必要です。"
       link:
         sign_in_with: "%{provider} IDでログイン"

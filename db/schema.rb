@@ -14,12 +14,10 @@
 ActiveRecord::Schema.define(:version => 20111022184532) do
 
   create_table "accounts", :force => true do |t|
-    t.integer  "uid",          :null => false
-    t.string   "first_name",   :null => false
-    t.string   "last_name",    :null => false
+    t.integer  "uid",        :null => false
+    t.string   "first_name", :null => false
+    t.string   "last_name",  :null => false
     t.string   "nickname"
-    t.text     "image_url"
-    t.text     "facebook_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
