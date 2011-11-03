@@ -6,6 +6,11 @@ $link_hover_color: #00438A;
   src: url("Ultra.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: Rokkitt;
+  src: url("Rokkitt.otf") format("opentype");
+}
+
 /* <!-- common --> */
 body {
   background-color: #555;
