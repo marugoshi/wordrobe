@@ -1,6 +1,11 @@
 $link_normal_color: #0069D6;
 $link_hover_color: #00438A;
 
+@font-face {
+  font-family: Ultra;
+  src: url("Ultra.ttf") format("truetype");
+}
+
 /* <!-- common --> */
 body {
   background-color: #555;
@@ -21,11 +26,11 @@ a.hover {
 }
 
 h1#logo {
-  background-image: url("/assets/common/logo.png");
   width: 365px;
   height: 44px;
-  text-indent: -9999px;
-  margin: 0px 0 10px 0;
+  margin: 2px 0 10px 0;
+  font-family: Ultra;
+  font-size: 60px;
 }
 
 #shadow {
