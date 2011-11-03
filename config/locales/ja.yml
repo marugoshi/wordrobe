@@ -5,6 +5,10 @@ ja:
       create: "Add"
       memorize: "X"
       forget: "O"
+  message:
+    good_evening: "こんばんは"
+    good_morning: "おはようございます"
+    good_afternoon: "こんにちは"
 
   # model
 
