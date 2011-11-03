@@ -13,17 +13,17 @@ class Accounts::WordrobesController < ApplicationController
 
   def toggle_memorize_with_ajax
     # TODO raise exception if word_belonged does not exist.
-    word_belonged = current_account.wordrobes.where("id = ?", params[:wordrobe_id]).first()
+    word_belonged = current_account.wordrobes.where("wordrobes.id = ?", params[:wordrobe_id]).first()
     word_belonged.memorized = !word_belonged.memorized?
     word_belonged.save!
-    @wordrobe = current_account.wordrobes
+    @wordrobe = current_account.wordrobes.for_list
     render :partial => "accounts/wordrobes/wordrobe"
   end
 
   def destroy_with_ajax
-    word_belonged = current_account.wordrobes.where("id = ?", params[:wordrobe_id]).first()
+    word_belonged = current_account.wordrobes.where("wordrobes.id = ?", params[:wordrobe_id]).first()
     word_belonged.delete
-    @wordrobe = current_account.wordrobes
+    @wordrobe = current_account.wordrobes.for_list
     render :partial => "accounts/wordrobes/wordrobe"
   end
 end

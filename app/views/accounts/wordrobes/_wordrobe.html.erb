@@ -1,5 +1,17 @@
-<ul>
-  <% @wordrobe.each do |word| %>
-    <%= raw(word_row(word)) %>
-  <% end %>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>単語</th>
+      <th>回数</th>
+      <th>単語</th>
+      <th>回数</th>
+    </tr>
+  </thead>
+  <tdbody>
+    <% @wordrobe.each do |word| %>
+      <tr>
+        <%= raw(word_row(word)) %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

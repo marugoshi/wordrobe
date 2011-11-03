@@ -1,10 +1,17 @@
 <%= render :partial => "layouts/header" %>
 
+<div class="row">
+  <div class="span11">
+  <div id="wordrobe">
+    <%= render :partial => "accounts/wordrobes/wordrobe" %>
+  </div>
+  </div>
+  <div class="span5">
+  </div>
+</div>
+
 <%= form_tag "accounts/wordrobes", :method => :post do %>
   <%= autocomplete_field_tag "word", "", autocomplete_word_name_words_path, :size => 30 %>
   <%= submit_tag t("wordrobe.button.create") %>
 <% end %>
 
-<div id="wordrobe">
-  <%= render :partial => "accounts/wordrobes/wordrobe" %>
-</div>

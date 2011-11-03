@@ -3,6 +3,6 @@ class AccountsController < ApplicationController
   before_filter :login_required
 
   def dashboard
-    @wordrobe = current_account.wordrobes
+    @wordrobe = current_account.wordrobes.for_list
   end
 end

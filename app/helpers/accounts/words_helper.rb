@@ -19,6 +19,6 @@ module Accounts::WordsHelper
       :method => :delete,
       :class => "update_wordrobe"
     )
-    "<li>#{toggle_link}&nbsp;#{word.word.name}&nbsp;(#{word.register_count})&nbsp;#{remove_link}</li>"
+    "<td>#{toggle_link}</td><td>#{word.word.name}</td><td>(#{word.register_count})</td><td>#{remove_link}</td>"
   end
 end
