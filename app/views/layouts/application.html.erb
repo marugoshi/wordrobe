@@ -7,13 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="container">
-  <%= yield %>
-</div>
-<div id="footer">
-  <div id="shadow"></div>
+<div id="header">
   <div class="container">
-    <div id="copyright">&copy; 2011 - MARUGOSHI.ORG</div>
+    <div id="menu"></div>
+    <h1 id="logo">Wordrobe</h1>
+    <h2 id="lead"><%= t(".message.lead") %></h2>
+  </div>
+</div>
+
+<%= yield %>
+
+<div id="footer">
+  <div class="container">
+    <div id="copyright">&copy; MARUGOSHI.ORG</div>
   </div>
 </div>
 </body>

@@ -16,6 +16,9 @@ ja:
 
   # controller & view
   layouts:
+    application:
+      message:
+        lead: "どーしても覚えられない単語をしまっておく、言葉の収納棚です。"
     header:
       message:
         greeting: "%{name} さん %{greeting}！"
@@ -26,7 +29,6 @@ ja:
   static:
     welcome:
       message:
-        lead: "Wordrobeは覚えられない英単語を入れておく言葉の収納棚です。"
         need_id: "ログインには%{provider} IDが必要です。"
       link:
         sign_in_with: "%{provider} IDでログイン"

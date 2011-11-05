@@ -1,11 +1,19 @@
-<div id="welcome" class="row">
-  <img src="/assets/common/hanger.png" id="hanger" />
-  <div class="span8 well">
-    <h1 id="logo">Wordrobe</h1>
-    <p id="lead"><%= t(".message.lead") %></p>
-    <div id="sign_in">
-      <p id="need_id"><%= t(".message.need_id", :provider => "Facebook") %></p>
-      <p id="sign_in_with"><%= link_to t(".link.sign_in_with", :provider => "Facebook"), "/auth/facebook", :class => "btn" %></p>
+<div id="welcome">
+  <div id="wardrobe">
+    <div class="container">
+      <div class="row">
+        <div class="span6">
+          <div id="sign_in" class="well">
+            <p id="need_id"><%= t(".message.need_id", :provider => "Facebook") %></p>
+            <p id="sign_in_with"><%= link_to t(".link.sign_in_with", :provider => "Facebook"), "/auth/facebook", :class => "btn" %></p>
+          </div>
+        </div>
+        <div class="span9 offset1">
+          <div id="word">
+            <img src="/assets/static/welcome/word.png" width="304" height="398" alt="foreseeable" />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
