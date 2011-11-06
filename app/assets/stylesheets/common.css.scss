@@ -70,6 +70,8 @@ a.hover {
     }
 
     #link {
+      margin: 0 0 0 2px;
+
       img {
         vertical-align: top;
       }
@@ -77,28 +79,6 @@ a.hover {
       a {
         margin: 0 12px 0 4px;
       }
-    }
-  }
-}
-
-#leftbox {
-}
-
-#rightbox {
-  margin: 20px 0 0 0;
-
-  label {
-    margin: 0 0 5px 0;
-    font-size: 12px;
-  }
-
-  .form-stacked {
-    padding: 0;
-  }
-
-  #add_form {
-    .add {
-      margin: 0 0 0 14px;
     }
   }
 }
@@ -135,3 +115,109 @@ a.hover {
 }
 
 /* <!-- /welcome --> */
+
+
+/* <!-- dashboard --> */
+
+#accounts_dashboard {
+  #leftbox {
+    #prev {
+      display: inline;
+      float: left;
+      width: 130px;
+      margin: 150px 0 0 0;
+      text-align: center;
+    }
+
+    #next {
+      display: inline;
+      float: left;
+      width: 130px;
+      margin: 150px 0 0 0;
+      text-align: center;
+    }
+
+    #word_info {
+      display: inline;
+      float: left;
+      position: relative;
+      width: 304px;
+      height: 398px;
+      margin:16px 33px 0 0;
+      background-image: url("/assets/common/wordrobe/word_beige.png");
+      background-repeat: no-repeat;
+
+      #register_count {
+        width: 33px;
+        margin: 133px 0 0 61px;
+        padding: 9px 0 9px 0;
+        text-align: center;
+        color: #fff;
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      #word {
+        margin: 28px 0 0 0;
+        text-align:center;
+        font-size: 30px;
+        font-family: Rokkitt;
+        text-shadow: 1px 1px 0 #eee;
+      }
+
+      #check {
+        margin: 18px 0 0 0;
+        position: relative;
+
+        span {
+          float:left;
+          position: absolute; left: 139px;
+          width: 31px;
+          height: 30px;
+          margin: 0 7px 0 0;
+        }
+        span img {
+          border: 0;
+        }
+        span#memorize {
+          background: url("/assets/common/wordrobe/memorize_on.png");
+        }
+        span#forget {
+          background: url("/assets/common/wordrobe/memorize_off.png");
+        }
+        span a {
+          display: block;
+          width: 31px;
+          height: 30px;
+        }
+        span a:hover {
+          background-color: transparent;
+        }
+        span a:hover img {
+          visibility:hidden;
+        }
+      }
+    }
+  }
+
+  #rightbox {
+    margin: 20px 0 0 0;
+
+    label {
+      margin: 0 0 5px 0;
+      font-size: 12px;
+    }
+
+    .form-stacked {
+      padding: 0;
+    }
+
+    #add_form {
+      .add {
+        margin: 0 0 0 14px;
+      }
+    }
+  }
+}
+
+/* <!-- /dashboard --> */

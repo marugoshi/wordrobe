@@ -6,6 +6,13 @@
     per_page:      number of items to fetch per page
     remote:        data-remote
 -%>
-<span class="prev">
-  <%= link_to_unless current_page.first?, raw(t 'views.pagination.previous'), url, :rel => 'prev', :remote => remote, "data-type" => "html", :class => "update_wordrobe" %>
-</span>
+<% unless current_page.first? %>
+  <%= link_to(
+    raw(image_tag("/assets/common/wordrobe/prev.png", :width => "29", :height => "29", :alt => t("wordrobe.button.prev"))),
+    url,
+    :rel => 'prev',
+    :remote => remote,
+    "data-type" => "html",
+    :class => "update_wordrobe"
+  ) %>
+<% end %>

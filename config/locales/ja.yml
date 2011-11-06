@@ -3,8 +3,11 @@ ja:
   wordrobe:
     button:
       create: "追加"
-      memorize: "X"
-      forget: "O"
+      next: "次"
+      prev: "前"
+      remove: "削除"
+      memorize: "おぼえた！"
+      forget: "わすれた！"
 
   # model
 

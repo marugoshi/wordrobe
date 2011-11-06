@@ -18,7 +18,9 @@ class Wordrobe < ActiveRecord::Base
   scope :count_desc, order("register_count DESC")
   scope :created_asc, order("created_at ASC")
   scope :created_desc, order("created_at DESC")
+  scope :updated_asc, order("updated_at ASC")
+  scope :updated_desc, order("updated_at DESC")
 
   # scope :for_list, joins(:word).alphabet_asc.limit(20)
-  scope :for_dashboard, lambda { |page| created_desc.page(page) }
+  scope :for_dashboard, lambda { |page| updated_desc.page(page) }
 end

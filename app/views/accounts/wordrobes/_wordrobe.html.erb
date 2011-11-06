@@ -1,19 +1,9 @@
-<table>
-  <thead>
-    <tr>
-      <th>単語</th>
-      <th>回数</th>
-      <th>単語</th>
-      <th>回数</th>
-    </tr>
-  </thead>
-  <tdbody>
-    <% @wordrobe.each do |word| %>
-      <tr>
-        <%= raw(word_row(word)) %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= paginate @wordrobe, :remote => true, :theme => "wordrobe_next", :params => { :controller => "/accounts/wordrobes", :action => "index_with_ajax" } %>
-<%= paginate @wordrobe, :remote => true, :theme => "wordrobe_prev", :params => { :controller => "/accounts/wordrobes", :action => "index_with_ajax" } %>
+<% word = @wordrobe.first %>
+
+<div id="prev"><%= paginate_prev(@wordrobe) %></div>
+<div id="word_info">
+  <div id="register_count"><%= word.register_count %></div>
+  <div id="word"><%= word.word.name %></div>
+  <div id="check"><%= toggle_link(word) %></div>
+</div>
+<div id="next"><%= paginate_next(@wordrobe) %></div>
