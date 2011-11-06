@@ -5,9 +5,9 @@ gem "rack", "1.3.3"
 gem "rails"
 gem "pg"
 
+gem "kaminari"
+
 gem "settingslogic"
-gem "haml"
-gem "sass"
 
 gem "omniauth", "0.3.2"
 
