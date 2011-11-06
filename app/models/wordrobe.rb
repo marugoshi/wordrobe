@@ -10,6 +10,8 @@ class Wordrobe < ActiveRecord::Base
   attr_accessible :account_id, :word_id, :register_count
   attr_protected :created_at, :updated_at
 
+  paginates_per 1
+
   scope :alphabet_asc, order("words.name ASC")
   scope :alphabet_desc, order("words.name DESC")
   scope :count_asc, order("register_count ASC")
@@ -17,5 +19,6 @@ class Wordrobe < ActiveRecord::Base
   scope :created_asc, order("created_at ASC")
   scope :created_desc, order("created_at DESC")
 
-  scope :for_list, joins(:word).alphabet_asc.limit(20)
+  # scope :for_list, joins(:word).alphabet_asc.limit(20)
+  scope :for_dashboard, lambda { |page| created_desc.page(page) }
 end

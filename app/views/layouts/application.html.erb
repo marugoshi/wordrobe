@@ -7,20 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="header">
-  <div class="container">
-    <div id="menu"></div>
-    <h1 id="logo">Wordrobe</h1>
-    <h2 id="lead"><%= t(".message.lead") %></h2>
-  </div>
-</div>
+<div id="<%= controller_name + "_" + action_name %>" class="<%= controller_name %> <%= action_name %>">
+  <div id="header">
+    <div class="container">
+      <% if current_account %>
+        <%= render :partial => "layouts/header" %>
+      <% end %>
+      <h1 id="logo"><%= link_to image_tag("/assets/common/logo.png", { :width => "224", :height => "38", :alt => "Wordrobe" }), welcome_path %></h1>
+      <% if controller_name == "static" && action_name == "welcome" %>
+        <div id="lead"><%= image_tag("/assets/static/welcome/lead.png", { :width => "373", :height => "12", :alt => t(".message.lead") }) %></div>
+      <% end %>
+    </div><!-- /.container -->
+  </div><!-- /#header -->
 
-<%= yield %>
+  <%= yield %>
 
-<div id="footer">
-  <div class="container">
-    <div id="copyright">&copy; MARUGOSHI.ORG</div>
+  <div id="footer">
+    <div class="container">
+      <div id="copyright">&copy; MARUGOSHI.ORG</div>
+    </div>
   </div>
-</div>
+</div><!-- /#<%= controller_name + "_" + action_name %> .<%= controller_name %> .<%= action_name %> -->
 </body>
 </html>

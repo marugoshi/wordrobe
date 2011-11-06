@@ -15,3 +15,5 @@
     <% end %>
   </tbody>
 </table>
+<%= paginate @wordrobe, :remote => true, :theme => "wordrobe_next", :params => { :controller => "/accounts/wordrobes", :action => "index_with_ajax" } %>
+<%= paginate @wordrobe, :remote => true, :theme => "wordrobe_prev", :params => { :controller => "/accounts/wordrobes", :action => "index_with_ajax" } %>

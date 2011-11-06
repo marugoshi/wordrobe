@@ -1,17 +1,24 @@
-<%= render :partial => "layouts/header" %>
-
-<div class="row">
-  <div class="span11">
-  <div id="wordrobe">
-    <%= render :partial => "accounts/wordrobes/wordrobe" %>
-  </div>
-  </div>
-  <div class="span5">
-  </div>
-</div>
-
-<%= form_tag "accounts/wordrobes", :method => :post do %>
-  <%= autocomplete_field_tag "word", "", autocomplete_word_name_words_path, :size => 30 %>
-  <%= submit_tag t("wordrobe.button.create") %>
-<% end %>
-
+<div id="wardrobe">
+  <div class="container">
+    <div class="row">
+      <div class="span11">
+        <div id="leftbox">
+          <div id="wordrobe">
+            <%= render :partial => "accounts/wordrobes/wordrobe" %>
+          </div>
+        </div><!-- /#leftbox -->
+      </div><!-- /.span11 -->
+      <div class="span5">
+        <div id="rightbox">
+          <div class="well">
+            <%= form_tag "accounts/wordrobes", :method => :post, :id => "add_form", :class => "form-stacked" do %>
+              <label for="word"><%= t(".label.word") %></label>
+              <%= autocomplete_field_tag "word", "", autocomplete_word_name_words_path, :class => "span3" %>
+              <span class="add"><%= submit_tag t("wordrobe.button.create"), :class => "btn" %></span>
+            <% end %>
+          </div>
+        </div><!-- /#rightbox -->
+      </div><!-- /.span5 -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</div><!-- /#wardrobe -->

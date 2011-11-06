@@ -22,53 +22,94 @@ a.hover {
 }
 
 #header {
-  #menu {
-    height: 78px;
-  }
-
   h1#logo {
-    width: 224px;
-    height:38px;
+    height: 38px;
     margin: 0 0 10px 0;
     padding: 0;
-    background-image: url("/assets/common/logo.png");
-    font-size: 14px;
-    text-indent:-9999px;
   }
 
-  h2#lead {
-    width: 373px;
-    height:12px;
+  #lead {
     margin: 0 0 28px 0;
     padding: 0;
-    background-image: url("/assets/common/lead.png");    
-    font-size: 12px;
-    text-indent:-9999px;
   }
 }
 
 #wardrobe {
+  margin: 0 0 120px 0;
   background-image: url("/assets/common/wardrobe.png");
   background-repeat: repeat-x;
 }
 
-#copyright {
-  text-align: right;
-  font-size: 11px;
-  padding: 10px 20px 20px 0;
-  text-shadow: 1px 1px 0 #ccc;
+#footer {
+  padding: 0 0 50px 0;
+
+  #copyright {
+    text-align: right;
+    font-size: 11px;
+    text-shadow: 1px 1px 0 #ccc;
+  }  
 }
 
 /* <!-- /common --> */
 
 
+/* <!-- common login user --> */
+
+#header {
+  #menu {
+    margin: 10px 0 0 0;
+    font-size: 12px;
+
+    #picture {
+      text-align: right;
+      margin: 6px 0 0 0;
+    }
+
+    #nickname {
+      color: #666;
+    }
+
+    #link {
+      img {
+        vertical-align: top;
+      }
+
+      a {
+        margin: 0 12px 0 4px;
+      }
+    }
+  }
+}
+
+#leftbox {
+}
+
+#rightbox {
+  margin: 20px 0 0 0;
+
+  label {
+    margin: 0 0 5px 0;
+    font-size: 12px;
+  }
+
+  .form-stacked {
+    padding: 0;
+  }
+
+  #add_form {
+    .add {
+      margin: 0 0 0 14px;
+    }
+  }
+}
+
+/* <!-- /common login user --> */
+
 
 /* <!-- welcome --> */
 
-#welcome {
-  #wardrobe {
-    margin: 0 0 120px 0;
-  }
+#static_welcome {
+  margin:73px 0 0 0;
 
   .well {
     padding: 30px 19px 30px 19px;

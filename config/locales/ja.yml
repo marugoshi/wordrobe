@@ -2,13 +2,9 @@ ja:
   # common
   wordrobe:
     button:
-      create: "Add"
+      create: "追加"
       memorize: "X"
       forget: "O"
-  message:
-    good_evening: "こんばんは"
-    good_morning: "おはようございます"
-    good_afternoon: "こんにちは"
 
   # model
 
@@ -20,10 +16,9 @@ ja:
       message:
         lead: "どーしても覚えられない単語をしまっておく、言葉の収納棚です。"
     header:
-      message:
-        greeting: "%{name} さん %{greeting}！"
       link:
-        dashboard: "トップ"
+        history: "履歴"
+        config: "設定"
         log_out: "ログアウト"
 
   static:
@@ -32,6 +27,11 @@ ja:
         need_id: "ログインには%{provider} IDが必要です。"
       link:
         sign_in_with: "%{provider} IDでログイン"
+
+  accounts:
+    dashboard:
+      label:
+        word: "覚えられない単語を追加しましょう。"
 
   words:
     oops_no_word:
