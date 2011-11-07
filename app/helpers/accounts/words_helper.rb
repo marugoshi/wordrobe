@@ -42,6 +42,17 @@ module Accounts::WordsHelper
     "</span>")
   end
 
+  def rating(word)
+    str = <<"EOF"
+    <input name="star1" type="radio" class="star"/>
+    <input name="star1" type="radio" class="star"/>
+    <input name="star1" type="radio" class="star" disabled="disabled"/>
+    <input name="star1" type="radio" class="star" disabled="disabled" checked="checked"/>
+    <input name="star1" type="radio" class="star"/>
+EOF
+    raw(str)
+  end
+
   private
   def memorize_image_tag(word)
     word.memorized? ?

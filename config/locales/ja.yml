@@ -35,14 +35,8 @@ ja:
     dashboard:
       label:
         word: "覚えられない単語を追加しましょう。"
-    wordrobes:
-      wordrobe:
-        message:
-          oops_no_word: |
-            単語がひとつも
-            登録されていません。
-            右のフォームから
-            登録してみてください。
+      message:
+        oops_no_word: "単語がひとつも登録されていません。"
 
   words:
     oops_no_word:

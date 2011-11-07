@@ -11,6 +11,9 @@
       <div class="span5">
         <div id="rightbox">
           <div class="well">
+            <% if @wordrobe.count == 0 %>
+              <div id="oops_no_word"><%= simple_format t(".message.oops_no_word") %></div>
+            <% end %>
             <%= form_tag "accounts/wordrobes", :method => :post, :id => "add_form", :class => "form-stacked" do %>
               <label for="word"><%= t(".label.word") %></label>
               <%= autocomplete_field_tag "word", "", autocomplete_word_name_words_path, :class => "span3" %>

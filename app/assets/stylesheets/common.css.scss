@@ -169,6 +169,13 @@ a.hover {
         text-shadow: 1px 1px 0 #eee;
       }
 
+      #rating {
+        float :left;
+        display: block;
+        margin: 20px 0 0 106px;
+      }
+
+      /*
       #check {
         margin: 18px 0 0 0;
         position: relative;
@@ -201,15 +208,7 @@ a.hover {
           visibility:hidden;
         }
       }
-
-      #oops_no_word {
-        margin: 190px 0 0 0;
-        padding: 0 0 0 80px;
-
-        p {
-          font-weight: bold;
-        }
-      }
+      */
     }
   }
 
@@ -223,6 +222,13 @@ a.hover {
 
     .form-stacked {
       padding: 0;
+    }
+
+    #oops_no_word {
+      p {
+        margin: 0 0 5px 0;
+        font-weight: bold;
+      }
     }
 
     #add_form {
