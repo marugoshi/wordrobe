@@ -57,7 +57,7 @@ a.hover {
 
 #header {
   #menu {
-    margin: 10px 0 0 0;
+    margin: 16px 0 5px 0;
     font-size: 12px;
 
     #picture {
@@ -120,6 +120,10 @@ a.hover {
 /* <!-- dashboard --> */
 
 #accounts_dashboard {
+  #wardrobe {
+    margin: 20px 0 0 0;
+  }
+
   #leftbox {
     #prev {
       display: inline;

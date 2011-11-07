@@ -23,12 +23,12 @@ class Accounts::WordrobesController < ApplicationController
     wordrobe
   end
 
-  def destroy_with_ajax
-    # TODO raise exception if word_belonged does not exist.
-    word_belonged = current_account.wordrobes.where("wordrobes.id = ?", params[:wordrobe_id]).first()
-    word_belonged.delete
-    wordrobe
-  end
+  # def destroy_with_ajax
+  #   # TODO raise exception if word_belonged does not exist.
+  #   word_belonged = current_account.wordrobes.where("wordrobes.id = ?", params[:wordrobe_id]).first()
+  #   word_belonged.delete
+  #   wordrobe
+  # end
 
   private
   def wordrobe
