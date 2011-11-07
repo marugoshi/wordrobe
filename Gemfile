@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem "rake"
-gem "rack", "1.3.3"
+gem "rack"
 gem "rails"
 gem "pg"
 
