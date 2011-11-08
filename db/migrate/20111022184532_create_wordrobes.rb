@@ -9,6 +9,7 @@ class CreateWordrobes < ActiveRecord::Migration
     end
     add_index :wordrobes, [:account_id, :word_id], :unique => true
     add_index :wordrobes, :register_count
+    add_index :wordrobes, :rating
     add_index :wordrobes, :created_at
     add_index :wordrobes, :updated_at
   end
