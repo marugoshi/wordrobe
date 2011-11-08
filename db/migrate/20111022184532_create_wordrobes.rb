@@ -4,7 +4,7 @@ class CreateWordrobes < ActiveRecord::Migration
       t.integer :account_id, :null => false
       t.integer :word_id, :null => false
       t.integer :register_count, :null => false, :default => 0
-      t.boolean :memorized, :null => false, :default => false
+      t.integer :rating
       t.timestamps
     end
     add_index :wordrobes, [:account_id, :word_id], :unique => true

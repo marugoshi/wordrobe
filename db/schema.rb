@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(:version => 20111022184532) do
   add_index "accounts", ["updated_at"], :name => "index_accounts_on_updated_at"
 
   create_table "wordrobes", :force => true do |t|
-    t.integer  "account_id",                        :null => false
-    t.integer  "word_id",                           :null => false
-    t.integer  "register_count", :default => 0,     :null => false
-    t.boolean  "memorized",      :default => false, :null => false
+    t.integer  "account_id",                    :null => false
+    t.integer  "word_id",                       :null => false
+    t.integer  "register_count", :default => 0, :null => false
+    t.integer  "rating"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

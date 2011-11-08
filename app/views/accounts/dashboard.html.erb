@@ -1,3 +1,27 @@
+<%= javascript_tag do %>
+
+// update wordrobe
+$(function() {
+  $(".update_wordrobe").live(
+    "ajax:success",
+    function(event, data, xhr) {
+      $("#wordrobe").html(data);
+    }
+  );
+});
+
+// star rating
+$.fn.rating.options.callback = function(value) {
+  $.post(
+    "/accounts/wordrobes/" + $("input#wordrobe_id").val() + "/rating_with_ajax?page=" + $("input#page").val(),
+    { rating : value },
+    function(data) {
+      $("#wordrobe").html(data);
+    }
+  );
+};
+<% end %>
+
 <div id="wardrobe">
   <div class="container">
     <div class="row">
