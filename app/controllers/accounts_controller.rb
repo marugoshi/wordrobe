@@ -4,5 +4,6 @@ class AccountsController < ApplicationController
 
   def dashboard
     @wordrobe = current_account.wordrobes.for_dashboard(params[:page])
+    @total = current_account.wordrobes.count
   end
 end

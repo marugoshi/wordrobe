@@ -45,17 +45,19 @@ $.fn.rating.options.callback = function(value) {
               <%= autocomplete_field_tag "word", "", autocomplete_word_name_words_path, :class => "span3" %>
               <span class="add"><%= submit_tag t("wordrobe.button.create"), :class => "btn" %></span>
             <% end %>
-            <hr />
-            <div class="form-stacked">
-              <label><img src="/assets/common/leftbox/user.png" width="15" height="15" alt="<%= t(".label.user") %>" /><span><%= t(".label.user") %></span></label>
-              <a href="#" onClick="alert('<%= t("not_implement.message.title") %>')" title="<%= t("not_implement.message.user_1") %>" /><img src="/assets/dummy/user_01.jpg" width="30" height="30" alt="" /></a>
-              <a href="#" onClick="alert('<%= t("not_implement.message.title") %>')" title="<%= t("not_implement.message.user_2") %>" /><img src="/assets/dummy/user_02.jpg" width="30" height="30" alt="" /></a>
-              <a href="#" onClick="alert('<%= t("not_implement.message.title") %>')" title="<%= t("not_implement.message.user_3") %>" /><img src="/assets/dummy/user_03.jpg" width="30" height="30" alt="" /></a>
-            </div>
-            <hr />
-            <div class="form-stacked">
-              <label><img src="/assets/common/leftbox/paperstar.png" width="15" height="15" alt="<%= t(".label.paperstar") %>" /><span><%= t(".label.paperstar") %></span></label>
-            </div>
+            <% unless @wordrobe.count == 0 %>
+              <hr />
+              <div class="form-stacked">
+                <label><img src="/assets/common/leftbox/user.png" width="15" height="15" alt="<%= t(".label.user") %>" /><span><%= t(".label.user") %></span></label>
+                <a href="#" onClick="alert('<%= t("not_implement.message.title") %>')" title="<%= t("not_implement.message.user_1") %>" /><img src="/assets/dummy/user_01.jpg" width="30" height="30" alt="" /></a>
+                <a href="#" onClick="alert('<%= t("not_implement.message.title") %>')" title="<%= t("not_implement.message.user_2") %>" /><img src="/assets/dummy/user_02.jpg" width="30" height="30" alt="" /></a>
+                <a href="#" onClick="alert('<%= t("not_implement.message.title") %>')" title="<%= t("not_implement.message.user_3") %>" /><img src="/assets/dummy/user_03.jpg" width="30" height="30" alt="" /></a>
+              </div>
+              <hr />
+              <div class="form-stacked">
+                <label><img src="/assets/common/leftbox/paperstar.png" width="15" height="15" alt="<%= t(".label.paperstar") %>" /><span><%= t(".label.paperstar") %></span></label>
+              </div>
+            <% end %>
           </div>
         </div><!-- /#rightbox -->
       </div><!-- /.span5 -->

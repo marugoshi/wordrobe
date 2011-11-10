@@ -41,6 +41,7 @@ class Accounts::WordrobesController < ApplicationController
   private
   def wordrobe
     @wordrobe = current_account.wordrobes.for_dashboard(params[:page])
+    @total = current_account.wordrobes.count
     render :partial => "accounts/wordrobes/wordrobe"
   end
 end

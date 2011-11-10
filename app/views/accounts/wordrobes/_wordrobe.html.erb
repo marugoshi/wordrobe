@@ -19,6 +19,7 @@ $(function(){
     <div id="rating"><%= rating(word) %></div>
     <input type="hidden" name="wordrobe_id" id="wordrobe_id" value="<%= word.id %>" />
     <input type="hidden" name="page" id="page" value="<%= params[:page] %>" />
+    <div id="total_count"><%= params[:page] || 1 %>&nbsp;/&nbsp;<%= @total %></div>
   </div>
   <div id="next"><%= paginate_next(@wordrobe) %></div>
 <% end %>
