@@ -1,4 +1,12 @@
 ja:
+  # dummy
+  not_implement:
+    message:
+      title: "実装してあると思った？　残念！　未実装でした！"
+      user_1: "織田信長さんのプロフィールを見る"
+      user_2: "太閤秀吉さんのプロフィールを見る"
+      user_3: "徳川家康さんのプロフィールを見る"
+
   # common
   wordrobe:
     message:
@@ -29,10 +37,6 @@ ja:
         history: "履歴"
         config: "設定"
         log_out: "ログアウト"
-    not_implement:
-      message:
-        title: "実装してあると思った？　残念！　未実装でした！"
-        body: "…そのうち実装すると思いますので、気長にお待ちくださると嬉しいです"
 
   static:
     welcome:
@@ -44,7 +48,7 @@ ja:
   accounts:
     dashboard:
       label:
-        word: "覚えられない単語を追加しましょう。"
+        word: "覚えられない単語を入れましょう。"
         user: "この単語を棚に入れているユーザー"
         paperstar: "この単語の他のユーザの評価"
       message:

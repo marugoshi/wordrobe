@@ -2,13 +2,13 @@
   <div class="container">
     <div class="row">
       <div class="span1 offset11">
-        <div id="picture"><img src="http://graph.facebook.com/<%= current_account.nickname %>/picture" width="25" height="25" alt="<%= current_account.nickname %>" /></div>
+        <div id="picture"><img src="http://graph.facebook.com/<%= current_account.nickname %>/picture" width="30" height="30" alt="<%= current_account.nickname %>" /></div>
       </div><!-- /.span1 -->
       <div class="span4">
         <div id="nickname"><%= current_account.nickname %></div>
         <div id="link">
-          <img src="/assets/common/header/history.png" width="15" height="15" alt="<%= t(".link.history") %>" /><%= link_to t(".link.history"), "#", :class => "not_implement" %>
-          <img src="/assets/common/header/config.png" width="15" height="15" alt="<%= t(".link.config") %>" /><%= link_to t(".link.config"), "#", :class => "not_implement" %>
+          <img src="/assets/common/header/history.png" width="15" height="15" alt="<%= t(".link.history") %>" /><a href="#" onClick="alert('<%= t("not_implement.message.title") %>')" /><%= t(".link.history") %></a>
+          <img src="/assets/common/header/config.png" width="15" height="15" alt="<%= t(".link.config") %>" /><a href="#" onClick="alert('<%= t("not_implement.message.title") %>')" /><%= t(".link.config") %></a>
           <img src="/assets/common/header/logout.png" width="15" height="15" alt="<%= t(".link.log_out") %>" /><%= link_to t(".link.log_out"), log_out_path, :method => :delete %>
         </div>
       </div><!-- /.span4 -->

@@ -62,7 +62,6 @@ a.hover {
 
 @mixin shirt {
   #word_info {
-    display: inline;
     float: left;
     position: relative;
     width: 304px;
@@ -91,8 +90,6 @@ a.hover {
     }
 
     #rating {
-      float :left;
-      display: block;
       margin: 40px 0 0 109px;
     }
 
