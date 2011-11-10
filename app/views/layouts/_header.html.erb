@@ -7,8 +7,8 @@
       <div class="span4">
         <div id="nickname"><%= current_account.nickname %></div>
         <div id="link">
-          <img src="/assets/common/header/history.png" width="15" height="15" alt="<%= t(".link.history") %>" /><a href="#" onClick="alert('<%= t("not_implement.message.title") %>')" /><%= t(".link.history") %></a>
-          <img src="/assets/common/header/config.png" width="15" height="15" alt="<%= t(".link.config") %>" /><a href="#" onClick="alert('<%= t("not_implement.message.title") %>')" /><%= t(".link.config") %></a>
+          <img src="/assets/common/header/history.png" width="15" height="15" alt="<%= t(".link.history") %>" /><a href="#" onClick="alert('<%= t("not_implement.message.title") %>'); return false;" /><%= t(".link.history") %></a>
+          <img src="/assets/common/header/config.png" width="15" height="15" alt="<%= t(".link.config") %>" /><a href="#" onClick="alert('<%= t("not_implement.message.title") %>'); return false;" /><%= t(".link.config") %></a>
           <img src="/assets/common/header/logout.png" width="15" height="15" alt="<%= t(".link.log_out") %>" /><%= link_to t(".link.log_out"), log_out_path, :method => :delete %>
         </div>
       </div><!-- /.span4 -->

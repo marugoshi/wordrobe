@@ -2,7 +2,7 @@ ja:
   # dummy
   not_implement:
     message:
-      title: "実装してあると思った？　残念！　未実装でした！"
+      title: "実装してあると思った？ 残念！ まだ未実装でした！"
       user_1: "織田信長さんのプロフィールを見る"
       user_2: "太閤秀吉さんのプロフィールを見る"
       user_3: "徳川家康さんのプロフィールを見る"
@@ -15,6 +15,9 @@ ja:
       my_twipsy_3: "会話で自然に使いたいのう"
       my_twipsy_4: "これはよく使われるなあ"
       my_twipsy_5: "知らなかった自分が怖い"
+      remember:
+        title: "おめでとうございます！"
+        body: "よくぞ…よくぞおぼえた…すばらしい！"
     button:
       create: "追加"
       next: "次"
@@ -22,6 +25,8 @@ ja:
       remove: "削除"
       memorize: "おぼえた！"
       forget: "わすれた！"
+      facebook: "facebookで報告"
+      twitter: "twitterで報告"
 
   # model
 
@@ -49,10 +54,13 @@ ja:
     dashboard:
       label:
         word: "覚えられない単語を入れましょう。"
+        search: "この単語の意味を調べる"
         user: "この単語を棚に入れているユーザー"
         paperstar: "この単語の他のユーザの評価"
       message:
         oops_no_word: "単語がひとつも登録されていません。"
+      link:
+        weblio: "weblioで調べる"
 
   words:
     oops_no_word:
