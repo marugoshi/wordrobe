@@ -1,8 +1,14 @@
 <% word = @wordrobe.first %>
 
 <%= javascript_tag do %>
+
 $(function(){
   $('input[type=radio].star').rating();
+
+  <% (1..5).to_a.each do |i| %>
+    var title_<%= i %> = function() { return "<%= t("wordrobe.message.my_twipsy_#{i}") %>"; };
+    $('#star_<%= i %>').twipsy({ offset: 4, title: title_<%= i %> }).click(function(e) { e.preventDefault(); });
+  <% end %>
 });
 <% end %>
 

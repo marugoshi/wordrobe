@@ -8,6 +8,11 @@ $link_hover_color: #00438A;
   src: url("Rokkitt.otf") format("opentype");
 }
 
+@font-face {
+  font-family: MyriadPro;
+  src: url("Myriadpro-regular.otf") format("opentype");
+}
+
 html body {
   height: 100%;
 }
@@ -51,6 +56,84 @@ a.hover {
 }
 
 /* <!-- /common --> */
+
+
+/* <!-- mixin --> */
+
+@mixin shirt {
+  #word_info {
+    display: inline;
+    float: left;
+    position: relative;
+    width: 304px;
+    height: 398px;
+    margin:16px 33px 0 0;
+    background-image: url("/assets/common/wordrobe/word_beige.png");
+    background-repeat: no-repeat;
+
+    #register_count {
+      width: 33px;
+      margin: 135px 0 0 61px;
+      padding: 9px 0 9px 0;
+      text-align: center;
+      color: #fff;
+      font-family: Rokkitt;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    #heart {
+      margin: 28px 0 0 0;
+      text-align:center;
+      font-size: 32px;
+      font-family: MyriadPro;
+      text-shadow: 1px 1px 0 #ddd;
+    }
+
+    #rating {
+      float :left;
+      display: block;
+      margin: 40px 0 0 109px;
+    }
+
+    /*
+    #check {
+      margin: 18px 0 0 0;
+      position: relative;
+
+      span {
+        float:left;
+        position: absolute; left: 139px;
+        width: 31px;
+        height: 30px;
+        margin: 0 7px 0 0;
+      }
+      span img {
+        border: 0;
+      }
+      span#memorize {
+        background: url("/assets/common/wordrobe/memorize_on.png");
+      }
+      span#forget {
+        background: url("/assets/common/wordrobe/memorize_off.png");
+      }
+      span a {
+        display: block;
+        width: 31px;
+        height: 30px;
+      }
+      span a:hover {
+        background-color: transparent;
+      }
+      span a:hover img {
+        visibility:hidden;
+      }
+    }
+    */
+  }
+}
+
+/* <!-- /mixin --> */
 
 
 /* <!-- common login user --> */
@@ -108,9 +191,10 @@ a.hover {
     }
   }
 
-  #word {
-    text-align: right;
-    margin:16px 33px 0 0;
+  @include shirt;
+
+  #word_info {
+    margin-left: 160px;
   }
 }
 
@@ -141,75 +225,7 @@ a.hover {
       text-align: center;
     }
 
-    #word_info {
-      display: inline;
-      float: left;
-      position: relative;
-      width: 304px;
-      height: 398px;
-      margin:16px 33px 0 0;
-      background-image: url("/assets/common/wordrobe/word_beige.png");
-      background-repeat: no-repeat;
-
-      #register_count {
-        width: 33px;
-        margin: 133px 0 0 61px;
-        padding: 9px 0 9px 0;
-        text-align: center;
-        color: #fff;
-        font-weight: bold;
-        font-size: 18px;
-      }
-
-      #heart {
-        margin: 28px 0 0 0;
-        text-align:center;
-        font-size: 30px;
-        font-family: Rokkitt;
-        text-shadow: 1px 1px 0 #eee;
-      }
-
-      #rating {
-        float :left;
-        display: block;
-        margin: 20px 0 0 106px;
-      }
-
-      /*
-      #check {
-        margin: 18px 0 0 0;
-        position: relative;
-
-        span {
-          float:left;
-          position: absolute; left: 139px;
-          width: 31px;
-          height: 30px;
-          margin: 0 7px 0 0;
-        }
-        span img {
-          border: 0;
-        }
-        span#memorize {
-          background: url("/assets/common/wordrobe/memorize_on.png");
-        }
-        span#forget {
-          background: url("/assets/common/wordrobe/memorize_off.png");
-        }
-        span a {
-          display: block;
-          width: 31px;
-          height: 30px;
-        }
-        span a:hover {
-          background-color: transparent;
-        }
-        span a:hover img {
-          visibility:hidden;
-        }
-      }
-      */
-    }
+    @include shirt;
   }
 
   #rightbox {
@@ -218,6 +234,18 @@ a.hover {
     label {
       margin: 0 0 5px 0;
       font-size: 12px;
+
+      img {
+        vertical-align: top;
+      }
+
+      span {
+        margin: 0 12px 0 4px;
+      }
+    }
+
+    hr {
+      border-bottom: 1px solid #ddd;
     }
 
     .form-stacked {

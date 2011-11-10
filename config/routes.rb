@@ -11,7 +11,7 @@ Reaper::Application.routes.draw do
 
   namespace :accounts do
     resources :wordrobes, :only => [:create] do
-      match "page_index", :action => "index_with_ajax", :as => "page_index", :via => :get, :on => :collection
+      match "wordrobe", :action => "wordrobe_with_ajax", :as => "wordrobe", :via => :get, :on => :collection
       match "rating_with_ajax", :action => "rating_with_ajax", :as => "rating", :via => :post
       # match "toggle_memorize", :action => "toggle_memorize_with_ajax", :as => "toggle_memorize", :via => :put
       # match "destroy", :action => "destroy_with_ajax", :as => "destroy", :via => :delete

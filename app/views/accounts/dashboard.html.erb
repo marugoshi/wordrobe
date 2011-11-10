@@ -1,5 +1,4 @@
 <%= javascript_tag do %>
-
 // update wordrobe
 $(function() {
   $(".update_wordrobe").live(
@@ -39,10 +38,18 @@ $.fn.rating.options.callback = function(value) {
               <div id="oops_no_word"><%= simple_format t(".message.oops_no_word") %></div>
             <% end %>
             <%= form_tag "accounts/wordrobes", :method => :post, :id => "add_form", :class => "form-stacked" do %>
-              <label for="word"><%= t(".label.word") %></label>
+              <label for="word"><img src="/assets/common/leftbox/plus.png" width="15" height="15" alt="<%= t(".label.word") %>" /><span><%= t(".label.word") %></span></label>
               <%= autocomplete_field_tag "word", "", autocomplete_word_name_words_path, :class => "span3" %>
               <span class="add"><%= submit_tag t("wordrobe.button.create"), :class => "btn" %></span>
             <% end %>
+            <hr />
+            <div class="form-stacked">
+              <label><img src="/assets/common/leftbox/user.png" width="15" height="15" alt="<%= t(".label.user") %>" /><span><%= t(".label.user") %></span></label>
+            </div>
+            <hr />
+            <div class="form-stacked">
+              <label><img src="/assets/common/leftbox/paperstar.png" width="15" height="15" alt="<%= t(".label.paperstar") %>" /><span><%= t(".label.paperstar") %></span></label>
+            </div>
           </div>
         </div><!-- /#rightbox -->
       </div><!-- /.span5 -->

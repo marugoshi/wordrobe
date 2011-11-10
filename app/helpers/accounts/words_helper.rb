@@ -5,7 +5,7 @@ module Accounts::WordsHelper
       wordrobe,
       :remote => true,
       :theme => "wordrobe_next",
-      :params => { :controller => "/accounts/wordrobes", :action => "index_with_ajax"}
+      :params => { :controller => "/accounts/wordrobes", :action => "wordrobe_with_ajax"}
     )
   end
 
@@ -14,7 +14,7 @@ module Accounts::WordsHelper
       wordrobe,
       :remote => true,
       :theme => "wordrobe_prev",
-      :params => { :controller => "/accounts/wordrobes", :action => "index_with_ajax" }
+      :params => { :controller => "/accounts/wordrobes", :action => "wordrobe_with_ajax" }
     )
   end
 

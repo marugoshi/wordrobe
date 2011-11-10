@@ -1,6 +1,12 @@
 ja:
   # common
   wordrobe:
+    message:
+      my_twipsy_1: "おぼえたけど使わないわー"
+      my_twipsy_2: "またすぐに忘れそうだす…"
+      my_twipsy_3: "会話で自然に使いたいのう"
+      my_twipsy_4: "これはよく使われるなあ"
+      my_twipsy_5: "知らなかった自分が怖い"
     button:
       create: "追加"
       next: "次"
@@ -23,6 +29,10 @@ ja:
         history: "履歴"
         config: "設定"
         log_out: "ログアウト"
+    not_implement:
+      message:
+        title: "実装してあると思った？　残念！　未実装でした！"
+        body: "…そのうち実装すると思いますので、気長にお待ちくださると嬉しいです"
 
   static:
     welcome:
@@ -35,6 +45,8 @@ ja:
     dashboard:
       label:
         word: "覚えられない単語を追加しましょう。"
+        user: "この単語を棚に入れているユーザー"
+        paperstar: "この単語の他のユーザの評価"
       message:
         oops_no_word: "単語がひとつも登録されていません。"
 

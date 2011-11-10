@@ -11,7 +11,7 @@ class Accounts::WordrobesController < ApplicationController
     redirect_to dashboard_path
   end
 
-  def index_with_ajax
+  def wordrobe_with_ajax
     wordrobe
   end
 
