@@ -1,8 +1,12 @@
 ---
+Myriadpro-regular.otf: Myriadpro-regular-d992d4fc1a3880d4abcedc4efa267c36.otf
 Rokkitt.otf: Rokkitt-bae4565d66b1aa9ea65e052bc03a59a8.otf
 common/header/config.png: common/header/config-00fbd79aa11026c4e9a62e7d242e37b3.png
 common/header/history.png: common/header/history-a8a67e22ce896ee9a0ea550d334f711b.png
 common/header/logout.png: common/header/logout-4ee2517ecdc33cd464ff780b33c9bca1.png
+common/leftbox/paperstar.png: common/leftbox/paperstar-1cdc63676813bfe6ccf87af9e958256c.png
+common/leftbox/plus.png: common/leftbox/plus-ac12874f94da1cde3edd8ed1911cd173.png
+common/leftbox/user.png: common/leftbox/user-35fe3756896ed3ea04447e33025bb5cf.png
 common/logo.png: common/logo-2e3380de2f63d6e85afafad745c78cee.png
 common/wardrobe.png: common/wardrobe-7c53d08e422ec924bc47b507cbf755b8.png
 common/wordrobe/memorized.png: common/wordrobe/memorized-d2864f6dfbf5f0dead6f63474cc59f99.png
@@ -13,8 +17,8 @@ common/wordrobe/search.png: common/wordrobe/search-05db832d0ee0a3be432fcabac6be4
 common/wordrobe/word_beige.png: common/wordrobe/word_beige-da48676ac42e3ba8314a983782f5296e.png
 static/welcome/lead.png: static/welcome/lead-9e802ce0428cf3f5678f8735b8bf488d.png
 static/welcome/word.png: static/welcome/word-9801a2cb89725bde1a00cfe987f2f435.png
-application.js: application-b28a80a99f6277d123acb1673d4c7a13.js
-application.css: application-9011b20fc069a9bb5e167ef482275a82.css
+application.js: application-17239e8ee0c2ba475e269795ca880366.js
+application.css: application-08087ae2e01bf1273c0c148a1d85c491.css
 jquery-ui/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png: jquery-ui/smoothness/images/ui-bg_flat_0_aaaaaa_40x100-2cf4f64704121d570c8c944feecb599d.png
 jquery-ui/smoothness/images/ui-bg_flat_75_ffffff_40x100.png: jquery-ui/smoothness/images/ui-bg_flat_75_ffffff_40x100-61e1b7d15d2479ba68755f17cb0de396.png
 jquery-ui/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png: jquery-ui/smoothness/images/ui-bg_glass_55_fbf9ee_1x400-916459289665d5f737a0c3cbec8185fa.png
@@ -28,5 +32,4 @@ jquery-ui/smoothness/images/ui-icons_2e83ff_256x240.png: jquery-ui/smoothness/im
 jquery-ui/smoothness/images/ui-icons_454545_256x240.png: jquery-ui/smoothness/images/ui-icons_454545_256x240-7ce553e0b9fe2aa26bc3b9e0c7fd7518.png
 jquery-ui/smoothness/images/ui-icons_888888_256x240.png: jquery-ui/smoothness/images/ui-icons_888888_256x240-83461ac52221572349c65a2907601090.png
 jquery-ui/smoothness/images/ui-icons_cd0a0a_256x240.png: jquery-ui/smoothness/images/ui-icons_cd0a0a_256x240-5e404740e7b81db33ff68615256381c7.png
-star-rating/star.gif: star-rating/star-de33f48a6a01157cae7c30ea54a0397a.gif
-star-rating/star.png: star-rating/star-bcae488380f56bdbdb22c87b4139d46e.png
+star-rating/star.png: star-rating/star-937c64f5db7584e343456b46ddb97454.png
