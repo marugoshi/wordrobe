@@ -2,7 +2,7 @@
 class SessionsController < ApplicationController
   def create
     auth = request.env["omniauth.auth"]
-    account = Account.where(:uid => auth["uid"]).first
+    account = Account.where("uid = ?", auth["uid"]).first
     account = current_account ? current_account : Account.new unless account
     account.save_with_omniauth!(auth)
 
