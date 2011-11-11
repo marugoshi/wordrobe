@@ -7,7 +7,7 @@ if Rails.env == "development"
   OmniAuth.config.test_mode = true
   OmniAuth.config.mock_auth[:facebook] = {
     "provider" => "facebook",
-    "uid" => 123456,
+    "uid" => "123456",
     "user_info" => {
       "first_name" => "Makoto",
       "last_name" => "Tokuyama",

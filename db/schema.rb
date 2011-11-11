@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20111022184532) do
 
   create_table "accounts", :force => true do |t|
-    t.integer  "uid",        :null => false
+    t.string   "uid",        :null => false
     t.string   "first_name", :null => false
     t.string   "last_name",  :null => false
     t.string   "nickname"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20111022184532) do
 
   add_index "wordrobes", ["account_id", "word_id"], :name => "index_wordrobes_on_account_id_and_word_id", :unique => true
   add_index "wordrobes", ["created_at"], :name => "index_wordrobes_on_created_at"
+  add_index "wordrobes", ["rating"], :name => "index_wordrobes_on_rating"
   add_index "wordrobes", ["register_count"], :name => "index_wordrobes_on_register_count"
   add_index "wordrobes", ["updated_at"], :name => "index_wordrobes_on_updated_at"
 
