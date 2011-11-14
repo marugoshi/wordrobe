@@ -78,6 +78,31 @@ a.hover {
   }
 }
 
+.my_modal {
+  h3 {
+    margin: 5px 0 0 0;
+    font-size: 12px;
+    line-height: 30px;
+  }
+
+  .modal-body {
+    p, th, td {
+      font-size: 11px;
+    }
+
+    th, td {
+      line-height: 12px;
+    }
+  }
+}
+
+.modal.fade {
+  top: 55%;
+}
+.modal.fade.in {
+  top: 50%;
+}
+
 #stickies {
   height: 293px;
   margin: 100px 0 0 0;

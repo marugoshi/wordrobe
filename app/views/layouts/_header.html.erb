@@ -30,30 +30,6 @@ $(function() {
   </div><!-- /.row -->
 </div><!--- /.container -->
 
-<div id="help" class="modal hide fade">
-  <div class="modal-header">
-    <a href="#" class="close">&times;</a>
-    <h3>help</h3>
-  </div>
-  <div class="modal-body">
-    <p>One fine body…</p>
-  </div>
-  <div class="modal-footer">
-    <a href="#" class="btn primary">Primary</a>
-    <a href="#" class="btn secondary">Secondary</a>
-  </div>
-</div><!-- /#help -->
+<%= render :partial => "layouts/help_modal" %>
 
-<div id="add" class="modal hide fade">
-  <div class="modal-header">
-    <a href="#" class="close">&times;</a>
-    <h3>add</h3>
-  </div>
-  <div class="modal-body">
-    <p>One fine body…</p>
-  </div>
-  <div class="modal-footer">
-    <a href="#" class="btn primary">Primary</a>
-    <a href="#" class="btn secondary">Secondary</a>
-  </div>
-</div><!-- /#add -->
+<%= render :partial => "layouts/add_modal" %>
