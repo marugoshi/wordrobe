@@ -1,3 +1,29 @@
+<%= javascript_tag do %>
+  jwerty.key(
+    "h",
+    function () {
+      $("#help").modal({
+        show: true,
+        keyboard: true,
+        backdrop: true
+      });
+    }
+  );
+
+  jwerty.key(
+    "a",
+    function () {
+      $("#add").modal({
+        show: true,
+        keyboard: true,
+        backdrop: true
+      });
+    }
+  );
+
+  // $('#myinput').bind('keydown', jwerty.event('ctrl+v/cmd+v', false));
+<% end %>
+
 <div class="container">
   <div class="row">
     <div class="span11">
@@ -9,10 +35,39 @@
     <div class="span4">
       <div id="nickname"><%= current_account.nickname %></div>
       <div id="link">
-        <a href="#"><%= t(".link.history") %></a>
-        <a href="#"><%= t(".link.config") %></a>
+        <a href="#"><%= t(".link.help") %>(h)</a>
+        <a href="#"><%= t(".link.history") %>(p)</a>
+        <a href="#"><%= t(".link.config") %>(c)</a>
         <%= link_to t(".link.log_out"), log_out_path, :method => :delete %>
       </div>
     </div><!-- /.span4 -->
   </div><!-- /.row -->
 </div><!--- /.container -->
+
+<div id="help" class="modal hide fade">
+  <div class="modal-header">
+    <a href="#" class="close">&times;</a>
+    <h3>Modal Heading</h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn primary">Primary</a>
+    <a href="#" class="btn secondary">Secondary</a>
+  </div>
+</div><!-- /#help -->
+
+<div id="add" class="modal hide fade">
+  <div class="modal-header">
+    <a href="#" class="close">&times;</a>
+    <h3>Modal Heading</h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn primary">Primary</a>
+    <a href="#" class="btn secondary">Secondary</a>
+  </div>
+</div><!-- /#add -->

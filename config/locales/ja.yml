@@ -28,6 +28,7 @@ ja:
   layouts:
     header:
       link:
+        help: "ヘルプ"
         history: "履歴"
         config: "設定"
         log_out: "ログアウト"
@@ -44,8 +45,6 @@ ja:
       label:
         word: "覚えられない単語を入れましょう。"
         search: "この単語の意味を調べる"
-        user: "この単語を棚に入れているユーザー"
-        paperstar: "この単語の他のユーザの評価"
       message:
         oops_no_word: "単語がひとつも登録されていません。"
       link:
