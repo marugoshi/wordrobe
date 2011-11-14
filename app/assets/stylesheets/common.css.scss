@@ -4,13 +4,23 @@ $link_normal_color: #0069D6;
 $link_hover_color: #00438A;
 
 @font-face {
+  font-family: Ultra;
+  src: url("Ultra.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: SketchRockwell;
+  src: url("SketchRockwell.ttf") format("truetype");
+}
+
+@font-face {
   font-family: Rokkitt;
   src: url("Rokkitt.otf") format("opentype");
 }
 
 @font-face {
   font-family: MyriadPro;
-  src: url("Myriadpro-regular.otf") format("opentype");
+  src: url("Myriadpr.otf") format("opentype");
 }
 
 html body {
@@ -27,255 +37,113 @@ a.hover {
 }
 
 #header {
-  h1#logo {
-    height: 38px;
-    margin: 0 0 10px 0;
-    padding: 0;
-  }
-
-  #lead {
-    margin: 0 0 28px 0;
-    padding: 0;
-  }
-}
-
-#wardrobe {
-  margin: 0 0 120px 0;
-  background-image: url("/assets/common/wardrobe.png");
-  background-repeat: repeat-x;
-}
-
-#footer {
-  padding: 0 0 50px 0;
-
-  #copyright {
-    text-align: right;
-    font-size: 11px;
-    text-shadow: 1px 1px 0 #ccc;
-  }  
-}
-
-/* <!-- /common --> */
-
-
-/* <!-- mixin --> */
-
-@mixin shirt {
-  #word_info {
-    float: left;
-    position: relative;
-    width: 304px;
-    height: 398px;
-    margin:16px 33px 0 0;
-    background-image: url("/assets/common/wordrobe/word_beige.png");
-    background-repeat: no-repeat;
-
-    #register_count {
-      width: 33px;
-      margin: 135px 0 0 61px;
-      padding: 9px 0 9px 0;
-      text-align: center;
-      color: #fff;
-      font-family: Rokkitt;
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    #heart {
-      margin: 28px 0 0 0;
-      text-align:center;
-      font-size: 32px;
-      font-family: MyriadPro;
-      text-shadow: 1px 1px 0 #ddd;
-    }
-
-    #rating {
-      margin: 40px 0 0 111px;
-    }
-
-    #total_count {
-      clear: both;
-      margin: 190px 0 0 0;
-      text-align: center;
-      font-size: 16px;
-      font-family: MyriadPro;
-      color: #ccc;
-    }
-
-    /*
-    #check {
-      margin: 18px 0 0 0;
-      position: relative;
-
-      span {
-        float:left;
-        position: absolute; left: 139px;
-        width: 31px;
-        height: 30px;
-        margin: 0 7px 0 0;
-      }
-      span img {
-        border: 0;
-      }
-      span#memorize {
-        background: url("/assets/common/wordrobe/memorize_on.png");
-      }
-      span#forget {
-        background: url("/assets/common/wordrobe/memorize_off.png");
-      }
-      span a {
-        display: block;
-        width: 31px;
-        height: 30px;
-      }
-      span a:hover {
-        background-color: transparent;
-      }
-      span a:hover img {
-        visibility:hidden;
-      }
-    }
-    */
-  }
-}
-
-/* <!-- /mixin --> */
-
-
-/* <!-- common login user --> */
-
-#header {
   #menu {
-    margin: 16px 0 5px 0;
-    font-size: 12px;
+    height: 50px;
+    margin: 10px 0 0 0;
+
+    font-size: 11px;
 
     #picture {
       text-align: right;
-      margin: 6px 0 0 0;
+      margin: 3px 0 0 0;
     }
 
     #nickname {
+      font-family: Rokkitt;
       color: #666;
     }
 
     #link {
-      margin: 0 0 0 2px;
-
       img {
         vertical-align: top;
       }
 
       a {
-        margin: 0 12px 0 4px;
+        margin: 0 16px 0 0;
       }
+    }
+  }
+
+  h1#logo {
+    margin: 8px 0 0 0;
+    padding: 0;
+    font-family: Ultra;
+    font-size: 20px;
+    line-height: 100%;
+
+    a {
+      color: #222;
+      text-decoration: none;    
     }
   }
 }
 
-/* <!-- /common login user --> */
+#stickies {
+  height: 293px;
+  margin: 100px 0 0 0;
+  background-image: url("/assets/stickies.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#footer {
+  margin: 90px 0 90px 0;
+  text-align: center;
+  font-family: MyriadPro;
+  font-size: 10px;
+}
+
+/* <!-- /common --> */
 
 
-/* <!-- welcome --> */
+/* <!-- static_welcome --> */
 
 #static_welcome {
-  margin:73px 0 0 0;
-
-  .well {
-    padding: 30px 19px 30px 19px;
-  }
-  
-  #sign_in {
-    margin: 55px 0 0 33px;
-
-    #need_id {
-      font-size: 11px;
-      margin: 0 0 5px 0;
-    }
-
-    #sign_in_with {
-      margin: 0;
-    }
+  h1#logo {
+    height: 70px;
+    margin: 90px 0 0 0;
+    text-align: center;
+    font-size: 60px;
   }
 
-  @include shirt;
+  #stickies {
+    margin: 30px 0 0 0;
 
-  #word_info {
-    margin-left: 160px;
+    #sign_in {
+      padding: 130px 0 0 0;
+      text-align: center;
+
+      #need_id {
+        font-size: 11px;
+      }
+
+      #sign_in_with {
+        margin: 0;
+      }
+    }
   }
 }
 
-/* <!-- /welcome --> */
+/* <!-- /static_welcome --> */
 
 
-/* <!-- dashboard --> */
+/* <!-- account_dashboard --> */
 
 #accounts_dashboard {
-  #wardrobe {
-    margin-top: 20px;
-  }
+  #wordrobe {
+    padding: 130px 0 0 0;
+    text-align: center;
 
-  #leftbox {
-    #prev {
-      display: inline;
-      float: left;
-      width: 130px;
-      margin: 150px 0 0 0;
-      text-align: center;
-    }
-
-    #next {
-      display: inline;
-      float: left;
-      width: 130px;
-      margin: 150px 0 0 0;
-      text-align: center;
-    }
-
-    @include shirt;
-  }
-
-  #rightbox {
-    margin: 20px 0 0 0;
-
-    label {
-      margin: 0 0 5px 0;
-      font-size: 12px;
-
-      img {
-        vertical-align: top;
-      }
-
-      span {
-        margin: 0 12px 0 4px;
-      }
-    }
-
-    hr {
-      border-bottom: 1px solid #ddd;
-    }
-
-    ul {
-      list-style: none;
-      margin-left: 0;
-    }
-
-    .form-stacked {
-      padding: 0;
-    }
-
-    #oops_no_word {
-      p {
-        margin: 0 0 5px 0;
-        font-weight: bold;
-      }
-    }
-
-    #add_form {
-      .add {
-        margin: 0 0 0 14px;
+    #wordrobe_info {
+      #heart {
+        font-family: Rokkitt;
+        font-size: 40px;
+        text-shadow: 1px 1px 0 #fff;
+        color: #333;
       }
     }
   }
 }
 
-/* <!-- /dashboard --> */
+
+/* <!-- /account_dashboard --> */

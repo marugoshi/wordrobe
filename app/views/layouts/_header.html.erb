@@ -1,17 +1,18 @@
-<div id="menu">
-  <div class="container">
-    <div class="row">
-      <div class="span1 offset11">
-        <div id="picture"><img src="http://graph.facebook.com/<%= current_account.nickname %>/picture" width="30" height="30" alt="<%= current_account.nickname %>" /></div>
-      </div><!-- /.span1 -->
-      <div class="span4">
-        <div id="nickname"><%= current_account.nickname %></div>
-        <div id="link">
-          <img src="/assets/common/header/history.png" width="15" height="15" alt="<%= t(".link.history") %>" /><a href="#" onClick="alert('<%= t("not_implement.message.title") %>'); return false;" /><%= t(".link.history") %></a>
-          <img src="/assets/common/header/config.png" width="15" height="15" alt="<%= t(".link.config") %>" /><a href="#" onClick="alert('<%= t("not_implement.message.title") %>'); return false;" /><%= t(".link.config") %></a>
-          <img src="/assets/common/header/logout.png" width="15" height="15" alt="<%= t(".link.log_out") %>" /><%= link_to t(".link.log_out"), log_out_path, :method => :delete %>
-        </div>
-      </div><!-- /.span4 -->
-    </div><!-- /.row -->
-  </div><!--- /.container -->
-</div><!-- /#menu -->
+<div class="container">
+  <div class="row">
+    <div class="span11">
+      <h1 id="logo"><%= link_to "Wordrobe", welcome_path %></h1>
+    </div><!-- /.span11 -->
+    <div class="span1">
+      <div id="picture"><img src="http://graph.facebook.com/<%= current_account.nickname %>/picture" width="30" height="30" alt="<%= current_account.nickname %>" /></div>
+    </div><!-- /.span1 -->
+    <div class="span4">
+      <div id="nickname"><%= current_account.nickname %></div>
+      <div id="link">
+        <a href="#"><%= t(".link.history") %></a>
+        <a href="#"><%= t(".link.config") %></a>
+        <%= link_to t(".link.log_out"), log_out_path, :method => :delete %>
+      </div>
+    </div><!-- /.span4 -->
+  </div><!-- /.row -->
+</div><!--- /.container -->

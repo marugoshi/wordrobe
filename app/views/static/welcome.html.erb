@@ -1,25 +1,8 @@
-<div id="wardrobe">
-  <div class="container">
-    <div class="row">
-      <div class="span6">
-        <div id="sign_in" class="well">
-          <p id="need_id"><%= t(".message.need_id", :provider => "Facebook") %></p>
-          <p id="sign_in_with"><%= link_to t(".link.sign_in_with", :provider => "Facebook"), "/auth/facebook", :class => "btn" %></p>
-        </div>
-      </div><!-- /.span6 -->
-      <div class="span9 offset1">
-        <div id="word_info">
-          <div id="register_count">&nbsp;</div>
-          <div id="heart">foreseeable</div>
-          <div id="rating">
-            <input name="star1" type="radio" class="star" disabled="disabled" checked="checked" />
-            <input name="star2" type="radio" class="star" disabled="disabled" checked="checked" />
-            <input name="star3" type="radio" class="star" disabled="disabled" checked="checked" />
-            <input name="star4" type="radio" class="star" disabled="disabled" checked="checked" />
-            <input name="star5" type="radio" class="star" disabled="disabled" />
-          </div>
-        </div>
-      </div><!-- /.span9 -->
-    </div><!-- /.row -->
-  </div><!-- /.container -->
-</div><!-- /#wardrobe -->
+<div class="container">
+  <div id="stickies">
+    <div id="sign_in">
+      <p id="need_id"><%= t(".message.need_id", :provider => "Facebook") %></p>
+      <p id="sign_in_with"><%= link_to t(".link.sign_in_with", :provider => "Facebook"), "/auth/facebook", :class => "btn" %></p>
+    </div><!-- /#sign_in -->
+  </div><!-- /#stickies -->
+</div><!-- /.container -->

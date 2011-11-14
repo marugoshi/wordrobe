@@ -1,12 +1,4 @@
 ja:
-  # dummy
-  not_implement:
-    message:
-      title: "実装してあると思った？ 残念！ まだ未実装でした！"
-      user_1: "織田信長さんのプロフィールを見る"
-      user_2: "太閤秀吉さんのプロフィールを見る"
-      user_3: "徳川家康さんのプロフィールを見る"
-
   # common
   wordrobe:
     message:
@@ -34,9 +26,6 @@ ja:
 
   # controller & view
   layouts:
-    application:
-      message:
-        lead: "どーしても覚えられない単語をしまっておく、言葉の収納棚です。"
     header:
       link:
         history: "履歴"
