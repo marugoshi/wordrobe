@@ -1,4 +1,13 @@
 <%= javascript_tag do %>
+$(function() {
+  $('#help').bind('shown', function () { $(document).unbind("keydown"); })
+  $('#help').bind('hidden', function () { bind_all(); })
+
+  $('#add').bind('shown', function () { $(document).unbind("keydown"); })
+  $('#add').bind('hidden', function () { bind_all(); })
+
+  bind_all();
+});
 <% end %>
 
 <div class="container">
@@ -12,7 +21,7 @@
     <div class="span4">
       <div id="nickname"><%= current_account.nickname %></div>
       <div id="link">
-        <a href="#"><%= t(".link.help") %>(h)</a>
+        <a href="#" onClick="toggle_help_modal(); return false;"><%= t(".link.help") %>(h)</a>
         <a href="#"><%= t(".link.history") %>(p)</a>
         <a href="#"><%= t(".link.config") %>(c)</a>
         <%= link_to t(".link.log_out"), log_out_path, :method => :delete %>
