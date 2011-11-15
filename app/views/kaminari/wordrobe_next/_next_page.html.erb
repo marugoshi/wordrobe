@@ -7,12 +7,17 @@
     remote:        data-remote
 -%>
 <% unless current_page.last? %>
-  <%= link_to(
-    raw(image_tag("/assets/common/wordrobe/next.png", :width => "29", :height => "29", :alt => t("wordrobe.button.next"))),
-    url,
-    :rel => 'next',
-    :remote => remote,
-    "data-type" => "html",
-    :class => "update_wordrobe"
-  ) %>
+  <%= javascript_tag do %>
+    $(function() {
+      $(document).unbind("keydown.right");
+      $(document).bind("keydown.right", "right", function() {
+        $.get(
+          "/accounts/wordrobes/wordrobes?page=<%= current_page + 1 %>"
+        )
+        .success(function(data) {
+          $("div#wordrobe").html(data);
+        });
+      });
+    });
+  <% end %>
 <% end %>

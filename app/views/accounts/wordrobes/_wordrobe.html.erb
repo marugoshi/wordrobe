@@ -1,23 +1,13 @@
 <% word = @wordrobe.first %>
-
-<%= javascript_tag do %>
-$(function(){
-  $('input[type=radio].star').rating();
-
-  <% (1..5).to_a.each do |i| %>
-    var title_<%= i %> = function() { return "<%= t("wordrobe.message.my_twipsy_#{i}") %>"; };
-    $('#star_<%= i %>').twipsy({ offset: 4, title: title_<%= i %> }).click(function(e) { e.preventDefault(); });
-  <% end %>
-});
-<% end %>
-
 <% if word %>
   <div id="wordrobe_info">
+    <%= paginate @wordrobe, :theme => "wordrobe_next" %>
     <!--<div id="register_count"><%= word.register_count %></div>-->
     <div id="heart"><%= word.word.name %></div>
     <!--<div id="rating"><%= rating(word) %></div>-->
     <input type="hidden" name="wordrobe_id" id="wordrobe_id" value="<%= word.id %>" />
     <input type="hidden" name="page" id="page" value="<%= params[:page] %>" />
     <!--<div id="total_counts"><%= params[:page] || 1 %>&nbsp;/&nbsp;<%= @total %></div>-->
+    <%= paginate @wordrobe, :theme => "wordrobe_prev" %>
   </div>
 <% end %>

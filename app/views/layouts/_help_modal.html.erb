@@ -5,42 +5,15 @@
   </div>
   <div class="modal-body">
     <p><%= t(".message.intro") %></p>
-    <table>
-      <thead>
-        <tr>
-          <th><%= t(".message.header.key") %></th>
-          <th><%= t(".message.header.content") %></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>h</td><td><%= t(".message.body.help") %></td>
-        </tr>
-        <tr>
-          <td>a</td><td><%= t(".message.body.add") %></td>
-        </tr>
-        <tr>
-          <td>t</td><td><%= t(".message.body.translate") %></td>
-        </tr>
-        <tr>
-          <td>m</td><td><%= t(".message.body.memorize") %></td>
-        </tr>
-        <tr>
-          <td>h or l</td><td><%= t(".message.body.navigate") %></td>
-        </tr>
-        <tr>
-          <td>← or →</td><td><%= t(".message.body.navigate") %></td>
-        </tr>
-        <tr>
-          <td>p</td><td><%= t(".message.body.past") %></td>
-        </tr>
-        <tr>
-          <td>c</td><td><%= t(".message.body.config") %></td>
-        </tr>
-        <tr>
-          <td>b</td><td><%= t(".message.body.top") %></td>
-        </tr>
-      </tbody>
-    </table>
+    <ul>
+      <li><strong class="key">h</strong>&nbsp;<%= t(".message.body.help") %></li>
+      <li><strong class="key">a</strong>&nbsp;<%= t(".message.body.add") %></li>
+      <li><strong class="key">t</strong>&nbsp;<%= t(".message.body.translate") %></li>
+      <li><strong class="key">m</strong>&nbsp;<%= t(".message.body.memorize") %></li>
+      <li><strong class="key">&nbsp;←</strong>&nbsp;or&nbsp;<strong class="key">→</strong>&nbsp;<%= t(".message.body.navigate") %></li>
+      <li><strong class="key">p</strong>&nbsp;<%= t(".message.body.past") %></li>
+      <li><strong class="key">c</strong>&nbsp;<%= t(".message.body.config") %></li>
+      <li><strong class="key">b</strong>&nbsp;<%= t(".message.body.top") %></li>
+    </ul>
   </div>
 </div><!-- /#help -->
