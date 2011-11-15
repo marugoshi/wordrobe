@@ -10,9 +10,10 @@ Reaper::Application.routes.draw do
   match "/words/oops" => "words#oops_no_word", :as => "oops_no_word", :via => :get
 
   namespace :accounts do
-    resources :wordrobes, :only => [:create] do
-      match "wordrobe", :action => "wordrobe_with_ajax", :as => "wordrobe", :via => :get, :on => :collection
-      match "rating_with_ajax", :action => "rating_with_ajax", :as => "rating", :via => :post
+    resources :wordrobes, :except => [:index, :show, :new, :create, :edit, :update, :destroy] do
+      match "create", :action => "create_with_ajax", :as => "create", :via => :post, :on => :collection
+      match "wordrobes", :action => "wordrobes_with_ajax", :as => "wordrobes", :via => :get, :on => :collection
+      match "rating", :action => "rating_with_ajax", :as => "rating", :via => :post, :on => :member
       # match "toggle_memorize", :action => "toggle_memorize_with_ajax", :as => "toggle_memorize", :via => :put
       # match "destroy", :action => "destroy_with_ajax", :as => "destroy", :via => :delete
     end

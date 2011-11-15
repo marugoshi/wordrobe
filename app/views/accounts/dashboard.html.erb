@@ -1,14 +1,4 @@
 <%= javascript_tag do %>
-// update wordrobe
-$(function() {
-  $(".update_wordrobe").live(
-    "ajax:success",
-    function(event, data, xhr) {
-      $("div#wordrobe").html(data);
-    }
-  );
-});
-
 // star rating
 $.fn.rating.options.callback = function(value) {
   $.post(

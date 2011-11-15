@@ -47,9 +47,8 @@ ja:
           memorize: "単語をおぼえたときに押します。"
           top: "トップページに戻ります。"
     add_modal:
-      title:
-        add: "おぼえられない単語を追加"
       message:
+        title: "単語を追加する"
         intro: "おぼえられない単語を書いて追加しましょう。"
 
 

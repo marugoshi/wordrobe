@@ -12,7 +12,6 @@ $(function(){
 <% end %>
 
 <% if word %>
-  <div id="prev"><%= paginate_prev(@wordrobe) %></div>
   <div id="wordrobe_info">
     <!--<div id="register_count"><%= word.register_count %></div>-->
     <div id="heart"><%= word.word.name %></div>
@@ -21,5 +20,4 @@ $(function(){
     <input type="hidden" name="page" id="page" value="<%= params[:page] %>" />
     <!--<div id="total_counts"><%= params[:page] || 1 %>&nbsp;/&nbsp;<%= @total %></div>-->
   </div>
-  <div id="next"><%= paginate_next(@wordrobe) %></div>
 <% end %>
