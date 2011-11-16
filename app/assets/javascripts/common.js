@@ -1,6 +1,6 @@
 function bind_all() {
-  $(document).bind("keydown", "h", toggle_help_modal);
-  $(document).bind("keydown", "a", toggle_add_modal);
+  $(document).bind("keydown.h", "h", toggle_help_modal);
+  $(document).bind("keydown.a", "a", toggle_add_modal);
 }
 
 function toggle_help_modal() {
@@ -8,6 +8,32 @@ function toggle_help_modal() {
 }
 function toggle_add_modal() {
   $("#add").modal({ show: true, keyboard: true, backdrop: true });
+}
+
+function next_page() {
+  $(document).unbind("keydown.right");
+  $(document).bind("keydown.right", "right", function() {
+    var page = parseInt($("#page").val());
+    $.get(
+      "/accounts/wordrobes/wordrobes?page=" + (page + 1)
+    )
+    .success(function(data) {
+        $("div#wordrobe").html(data);
+    });
+  });
+}
+
+function previous_page() {
+  $(document).unbind("keydown.left");
+  $(document).bind("keydown.left", "left", function() {
+    var page = parseInt($("#page").val());
+    $.get(
+      "/accounts/wordrobes/wordrobes?page=" + (page - 1)
+    )
+    .success(function(data) {
+      $("div#wordrobe").html(data);
+    });
+  });
 }
 
 $(function() {

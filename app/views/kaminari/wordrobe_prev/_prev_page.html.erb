@@ -8,16 +8,6 @@
 -%>
 <% unless current_page.first? %>
   <%= javascript_tag do %>
-    $(function() {
-      $(document).unbind("keydown.left");
-      $(document).bind("keydown.left", "left", function() {
-        $.get(
-          "/accounts/wordrobes/wordrobes?page=<%= current_page - 1 %>"
-        )
-        .success(function(data) {
-          $("div#wordrobe").html(data);
-        });
-      });
-    });
+    previous_page();
   <% end %>
 <% end %>
