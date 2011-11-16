@@ -7,7 +7,6 @@ Reaper::Application.routes.draw do
   match "/dashboard" => "accounts#dashboard", :as => "dashboard", :via => :get
 
   match "/words/autocomplete_word_name" => "words#autocomplete_word_name", :as => "autocomplete_word_name_words", :via => :get
-  match "/words/oops" => "words#oops_no_word", :as => "oops_no_word", :via => :get
 
   namespace :accounts do
     resources :wordrobes, :except => [:index, :show, :new, :create, :edit, :update, :destroy] do

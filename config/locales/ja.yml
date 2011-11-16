@@ -1,15 +1,6 @@
 ja:
   # common
   wordrobe:
-    message:
-      my_twipsy_1: "おぼえたけど使わないわー"
-      my_twipsy_2: "またすぐに忘れそうだす…"
-      my_twipsy_3: "会話で自然に使いたいのう"
-      my_twipsy_4: "これはよく使われるなあ"
-      my_twipsy_5: "知らなかった自分が怖い"
-      remember:
-        title: "おめでとうございます！"
-        body: "よくぞ…よくぞおぼえた…すばらしい！"
     button:
       create: "追加"
       remove: "削除"
@@ -51,7 +42,6 @@ ja:
         title: "単語を追加する"
         intro: "おぼえられない単語を書いて追加しましょう。"
 
-
   static:
     welcome:
       message:
@@ -60,15 +50,8 @@ ja:
         sign_in_with: "%{provider} IDでログイン"
 
   accounts:
-    dashboard:
-      label:
-        word: "覚えられない単語を入れましょう。"
-        search: "この単語の意味を調べる"
-      message:
-        oops_no_word: "単語がひとつも登録されていません。"
-      link:
-        weblio: "weblioで調べる"
-
-  words:
-    oops_no_word:
-      sorry: "Oops! Sorry the word you typed is not registered our dictionary."
+    wordrobes:
+      oops_no_word:
+        message:
+          title: "ごめん。"
+          body: "辞書に登録されていない単語です。"

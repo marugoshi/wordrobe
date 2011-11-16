@@ -3,7 +3,7 @@ class Accounts::WordrobesController < ApplicationController
 
   def create_with_ajax
     word = Word.where("name = ?", params[:word]).first()
-    return redirect_to oops_no_word_path unless word
+    return render :partial => "accounts/wordrobes/oops_no_word" unless word
     word_belonged = current_account.wordrobes.where("word_id = ?", word.id).first()
     word_belonged = Wordrobe.new(:account_id => current_account.id, :word_id => word.id) unless word_belonged
     word_belonged.register_count += 1

@@ -59,7 +59,6 @@ a.hover {
   #menu {
     height: 50px;
     margin: 10px 0 0 0;
-
     font-size: 11px;
 
     #picture {
@@ -185,6 +184,17 @@ a.hover {
         font-size: 40px;
         text-shadow: 1px 1px 0 #fff;
         color: #333;
+      }
+
+      #sorry {
+        font-size: 30px;
+        text-shadow: 1px 1px 0 #fff;
+        color: #333;
+      }
+
+      #help_text {
+        margin: 12px 0 0 0;
+        font-size: 11px;
       }
     }
   }

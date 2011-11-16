@@ -1,6 +1,6 @@
 <% word = @wordrobe.first %>
-<% if word %>
-  <div id="wordrobe_info">
+<div id="wordrobe_info">
+  <% if word %>
     <%= paginate @wordrobe, :theme => "wordrobe_next" %>
     <!--<div id="register_count"><%= word.register_count %></div>-->
     <div id="heart"><%= word.word.name %></div>
@@ -9,5 +9,8 @@
     <input type="hidden" name="page" id="page" value="<%= params[:page] || 1 %>" />
     <!--<div id="total_counts"><%= params[:page] || 1 %>&nbsp;/&nbsp;<%= @total %></div>-->
     <%= paginate @wordrobe, :theme => "wordrobe_prev" %>
-  </div>
-<% end %>
+  <% else %>
+    <div id="heart">h</div>
+    <div id="help_text">キーを押してください。</div>
+  <% end %>
+</div>
