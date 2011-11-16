@@ -3,6 +3,7 @@ function bind_all() {
   $(document).bind("keydown.a", "a", add_modal);
   next_page();
   previous_page();
+  toggle_memorize();
 }
 
 function help_modal() {
@@ -42,6 +43,9 @@ function previous_page() {
       });
     });
   }
+}
+
+function toggle_memorize() {  
 }
 
 $(function() {

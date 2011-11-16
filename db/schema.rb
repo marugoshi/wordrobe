@@ -30,9 +30,10 @@ ActiveRecord::Schema.define(:version => 20111022184532) do
   add_index "accounts", ["updated_at"], :name => "index_accounts_on_updated_at"
 
   create_table "wordrobes", :force => true do |t|
-    t.integer  "account_id",                    :null => false
-    t.integer  "word_id",                       :null => false
-    t.integer  "register_count", :default => 0, :null => false
+    t.integer  "account_id",                        :null => false
+    t.integer  "word_id",                           :null => false
+    t.integer  "register_count", :default => 0,     :null => false
+    t.boolean  "memorize",       :default => false
     t.integer  "rating"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -40,7 +41,6 @@ ActiveRecord::Schema.define(:version => 20111022184532) do
 
   add_index "wordrobes", ["account_id", "word_id"], :name => "index_wordrobes_on_account_id_and_word_id", :unique => true
   add_index "wordrobes", ["created_at"], :name => "index_wordrobes_on_created_at"
-  add_index "wordrobes", ["rating"], :name => "index_wordrobes_on_rating"
   add_index "wordrobes", ["register_count"], :name => "index_wordrobes_on_register_count"
   add_index "wordrobes", ["updated_at"], :name => "index_wordrobes_on_updated_at"
 
