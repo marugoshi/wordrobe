@@ -23,11 +23,4 @@ class Wordrobe < ActiveRecord::Base
 
   # scope :for_list, joins(:word).alphabet_asc.limit(20)
   scope :for_dashboard, lambda { |page| created_desc.page(page) }
-
-  scope :memorized, where("rating IS NOT NULL")
-  scope :not_memorized, where("rating IS NULL")
-
-  def memorized?
-    !!rating
-  end
 end

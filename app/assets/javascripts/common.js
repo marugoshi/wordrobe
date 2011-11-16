@@ -43,7 +43,16 @@ $(function() {
   }
 
   var toggle_memorize = function() {
-    
+    if ($("input#wordrobe_id").val()) {
+      var page = parseInt($("input#page").val());
+      $.ajax({
+        type: "PUT",
+        url: "/accounts/wordrobes/" + $("input#wordrobe_id").val() + "/toggle_memorize?page=" + page,
+        success: function(data) {
+          $("div#wordrobe").html(data);
+        }
+      });
+    }
   }
 
   // bind event to help modal
