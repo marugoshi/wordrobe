@@ -17,8 +17,8 @@ class Accounts::WordrobesController < ApplicationController
   end
 
   def toggle_memorize_with_ajax
-    # TODO raise exception if word_belonged does not exist.
     word_belonged = current_account.wordrobes.where("wordrobes.id = ?", params[:id]).first()
+    return render :partial => "accounts/wordrobes/oops_no_word" unless word_belonged
     word_belonged.memorize = !word_belonged.memorize?
     word_belonged.save!
     wordrobe

@@ -10,10 +10,8 @@
         <img src="/assets/forgot.png" />
       <% end %>
     </div><!-- /#check -->
-    <!--<div id="rating"><%= rating(word) %></div>-->
     <input type="hidden" name="wordrobe_id" id="wordrobe_id" value="<%= word.id %>" />
     <input type="hidden" name="page" id="page" value="<%= params[:page] || 1 %>" />
-    <!--<div id="total_counts"><%= params[:page] || 1 %>&nbsp;/&nbsp;<%= @total %></div>-->
     <%= paginate @wordrobe, :theme => "wordrobe_prev" %>
   <% else %>
     <div id="heart">h</div>
