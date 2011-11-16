@@ -24,15 +24,12 @@ ja:
     help_modal:
       message:
         title: "ヘルプ"
-        intro: "以下のキーボードのキーを押して、操作することができます。"
-        header:
-          key: "キー"
-          content: "押すと…"
+        intro: "以下のキーを押して、操作することができます。"
         body:
           help: "このヘルプを表示します。わからなくなったらとりあえず押しましょう。"
           add: "わからない単語を追加するためのウインドウを表示します。"
-          past: "今までに登録したり、覚えたりした単語の履歴を見るページに移動します。"
-          config: "あなたの設定を行うことができるページに移動します。"
+          past: "今までに登録したり、覚えたりした単語の履歴ページに移動します。"
+          config: "アプリの設定ページに移動します。"
           navigate: "登録した単語を見ることができます。"
           translate: "単語の意味を見ることができます。"
           memorize: "単語をおぼえたときに押します。"
@@ -51,7 +48,9 @@ ja:
 
   accounts:
     wordrobes:
-      oops_no_word:
+      wordrobe:
         message:
+          greeting: "<strong class=\"key\">h</strong>&nbsp;キーを押してください。"
+      oops_no_word:
           title: "ごめん。"
           body: "辞書に登録されていない単語です。"
