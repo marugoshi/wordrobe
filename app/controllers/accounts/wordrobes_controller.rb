@@ -1,5 +1,6 @@
 class Accounts::WordrobesController < ApplicationController
   before_filter :login_required
+  autocomplete :word, :name
 
   def create_with_ajax
     word = Word.where("name = ?", params[:word]).first()

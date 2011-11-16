@@ -6,7 +6,7 @@
   <div class="modal-body">
     <p><%= t(".message.intro") %></p>
     <%= form_tag "", :id => "add_form" do %>
-      <%= autocomplete_field_tag "word", "", autocomplete_word_name_words_path %>
+      <%= autocomplete_field_tag "word", "", autocomplete_word_name_accounts_wordrobes_path %>
       <input type="button" value="<%= t("wordrobe.button.create") %>" id="add_button" class="btn small" />
     <% end %>
   </div>
