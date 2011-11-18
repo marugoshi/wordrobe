@@ -4,15 +4,15 @@
       <h1 id="logo"><%= link_to "Wordrobe", welcome_path %></h1>
     </div><!-- /.span11 -->
     <div class="span1">
-      <div id="picture"><img src="http://graph.facebook.com/<%= current_account.nickname %>/picture" width="30" height="30" alt="<%= current_account.nickname %>" /></div>
+      <div id="picture"><a href="#" rel="twipsy" data-original-title="<%= t(".link.profile", :nickname => current_account.nickname) %>"><img src="http://graph.facebook.com/<%= current_account.nickname %>/picture" width="30" height="30" alt="<%= current_account.nickname %>" /></a></div>
     </div><!-- /.span1 -->
     <div class="span4">
-      <div id="nickname"><%= current_account.nickname %></div>
       <div id="link">
-        <a href="#" id="help_link"><%= t(".link.help") %>(h)</a>
-        <a href="#" id="history_link"><%= t(".link.history") %>(p)</a>
-        <a href="#" id="config_link"><%= t(".link.config") %>(c)</a>
-        <%= link_to t(".link.log_out"), log_out_path, :method => :delete %>
+        <a href="#" id="help_link" rel="twipsy" title="<%= t(".link.help") %>"><strong class="key">h</strong></a>
+        <a href="#" id="history_link" rel="twipsy" title="<%= t(".link.history") %>"><strong class="key">p</strong></a>
+        <a href="#" id="config_link" rel="twipsy" title="<%= t(".link.config") %>"><strong class="key">c</strong></a>
+        <a href="/log_out" rel="twipsy" title="<%= t(".link.log_out") %>" data-method="delete"><strong class="key">l</strong></a>
+        <!--<%= link_to raw("<strong class=\"key\">l</strong>"), log_out_path, :rel => "twipsy", :title => "hoge", :method => :delete %>-->
       </div>
     </div><!-- /.span4 -->
   </div><!-- /.row -->

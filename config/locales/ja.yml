@@ -17,6 +17,7 @@ ja:
   layouts:
     header:
       link:
+        profile: "%{nickname}さんのプロフィール"
         help: "ヘルプ"
         history: "履歴"
         config: "設定"
@@ -34,6 +35,7 @@ ja:
           translate: "単語の意味を見ることができます。"
           memorize: "単語をおぼえたときに押します。"
           top: "トップページに戻ります。"
+          log_out: "ログアウトします。"
     add_modal:
       message:
         title: "単語を追加する"
