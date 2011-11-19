@@ -5,6 +5,9 @@ class CreateAccounts < ActiveRecord::Migration
       t.string :first_name, :null => false
       t.string :last_name, :null => false
       t.string :nickname
+      t.boolean :display_memorized, :boolean, :default => true
+      t.boolean :show_profile, :boolean, :default => true
+      t.text :comment
       t.timestamps
     end
     add_index :accounts, :uid, :unique => true
