@@ -36,6 +36,8 @@ ja:
           memorize: "単語をおぼえたときに押します。"
           top: "トップページに戻ります。"
           log_out: "ログアウトします。"
+      label:
+        under_construction: "準備中"
     add_modal:
       message:
         title: "単語を追加する"
