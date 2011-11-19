@@ -63,6 +63,8 @@ class Accounts::WordrobesController < ApplicationController
         return render :partial => "accounts/wordrobes/error"
       end
       @translated = Nokogiri::XML(response).child.child.to_html()
+      word_belonged.translated_count += 1
+      word_belonged.save!
     end
 
     @wordrobe = current_account.wordrobes.for_dashboard(params[:page])
