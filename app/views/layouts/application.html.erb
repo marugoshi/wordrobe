@@ -12,12 +12,11 @@
     <div class="container">
       <div id="menu">
         <% if current_account %>
-          <%= render :partial => "layouts/header" %>
+          <%= render :partial => "layouts/help_modal" %>
+          <%= render :partial => "layouts/add_modal" %>
         <% end %>
       </div><!-- /#menu -->
-      <% if controller_name == "static" && action_name == "welcome" %>
-        <h1 id="logo"><%= link_to "Wordrobe", welcome_path %></h1>
-      <% end %>
+      <h1 id="logo"><%= link_to "Wordrobe", welcome_path %></h1>
     </div><!-- /.container -->
   </div><!-- /#header -->
 

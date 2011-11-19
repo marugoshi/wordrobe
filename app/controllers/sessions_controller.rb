@@ -13,8 +13,8 @@ class SessionsController < ApplicationController
     redirect_to attempted_path
   end
 
-  def destroy
+  def destroy_with_ajax
     session[:account_id] = nil
-    redirect_to welcome_path
+    render :text => "true"
   end
 end

@@ -18,6 +18,7 @@ $(function() {
     $(document).bind("keydown.left", "left", function() { prev_page(); });
     $(document).bind("keydown.r", "r", function() { toggle_memorize(); });
     $(document).bind("keydown.t", "t", function() { toggle_translate(); });
+    $(document).bind("keydown.l", "l", function() { log_out(); });
   }
 
   var bind_history_hotkeys = function() {
@@ -81,6 +82,16 @@ $(function() {
 
   var toggle_translate = function() {
     
+  }
+
+  var log_out = function() {
+    $.ajax({
+      type: "DELETE",
+      url: "/log_out",
+      success: function() {
+        window.location.href = "/";
+      }
+    });
   }
 
   // bind event to help modal
