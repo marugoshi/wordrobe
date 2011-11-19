@@ -7,7 +7,6 @@ class Accounts::WordrobesController < ApplicationController
     return render :partial => "accounts/wordrobes/oops_no_word" unless word
     word_belonged = current_account.wordrobes.where("word_id = ?", word.id).first()
     word_belonged = Wordrobe.new(:account_id => current_account.id, :word_id => word.id) unless word_belonged
-    word_belonged.register_count += 1
     word_belonged.save!
     wordrobe
   end
