@@ -81,7 +81,17 @@ $(function() {
   }
 
   var toggle_translate = function() {
-    
+    if ($("input#wordrobe_id").val()) {
+      var page = parseInt($("input#page").val());
+      var translated = $("input#translated").val();
+      $.ajax({
+        type: "PUT",
+        url: "/accounts/wordrobes/" + $("input#wordrobe_id").val() + "/toggle_translate?page=" + page + "&translated=" + translated,
+        success: function(data) {
+          switch_wordrobe(data);
+        }
+      });
+    }    
   }
 
   var log_out = function() {

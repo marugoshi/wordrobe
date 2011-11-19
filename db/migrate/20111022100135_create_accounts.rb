@@ -1,7 +1,8 @@
 class CreateAccounts < ActiveRecord::Migration
   def change
     create_table :accounts do |t|
-      t.string :uid, :null => false
+      t.string :facebook_uid, :null => false
+      t.string :twitter_uid
       t.string :first_name, :null => false
       t.string :last_name, :null => false
       t.string :nickname
@@ -10,7 +11,8 @@ class CreateAccounts < ActiveRecord::Migration
       t.text :comment
       t.timestamps
     end
-    add_index :accounts, :uid, :unique => true
+    add_index :accounts, :facebook_uid, :unique => true
+    add_index :accounts, :twitter_uid, :unique => true
     add_index :accounts, :first_name
     add_index :accounts, :last_name
     add_index :accounts, :nickname

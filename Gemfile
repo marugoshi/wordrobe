@@ -5,12 +5,6 @@ gem "rack"
 gem "rails"
 gem "pg"
 
-gem "kaminari"
-
-gem "settingslogic"
-
-gem "omniauth", "0.3.2"
-
 gem "jquery-rails"
 gem "rails3-jquery-autocomplete"
 
@@ -19,6 +13,14 @@ group :assets do
   gem "coffee-rails"
   gem "uglifier"
 end
+
+gem "omniauth", "0.3.2"
+
+gem "kaminari"
+
+gem "rest-client"
+gem "nokogiri"
+gem "settingslogic"
 
 group :development, :test do
   # gem "rspec-rails"

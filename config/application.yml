@@ -1,4 +1,9 @@
 defaults: &defaults
+  translate_url: "http://api.microsofttranslator.com/v2/Http.svc/Translate"
+  translated_params:
+    appid: "B859F8EF509CE31C9265625C654FF7DD666C618C"
+    from: "en"
+    to: "ja"
 
 production:
   <<: *defaults

@@ -2,8 +2,13 @@
 <div id="wordrobe_info">
   <% if word %>
     <%= paginate @wordrobe, :theme => "wordrobe_next" %>
-    <div id="heart"><%= word.word.name %></div>
-    <!--<div id="translated"><%= word.word.name %></div>-->
+    <div id="heart">
+      <% unless @translated %>
+        <%= word.word.name %>
+      <% else %>
+        <div class="translated"><%= raw(@translated) %></div>
+      <% end %>
+    </div>
     <div id="check">
       <% if word.memorize? %>
         <img src="/assets/memorized.png" />
@@ -13,6 +18,7 @@
     </div><!-- /#check -->
     <input type="hidden" name="wordrobe_id" id="wordrobe_id" value="<%= word.id %>" />
     <input type="hidden" name="page" id="page" value="<%= params[:page] || 1 %>" />
+    <input type="hidden" name="translated" id="translated" value="<%= @translated.blank? %>" />
     <%= paginate @wordrobe, :theme => "wordrobe_prev" %>
   <% else %>
     <div id="heart">h</div>

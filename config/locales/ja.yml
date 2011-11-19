@@ -32,6 +32,7 @@ ja:
           past: "今までに登録したり、覚えたりした単語の履歴ページに移動します。"
           config: "アプリの設定ページに移動します。"
           navigate: "登録した単語を見ることができます。"
+          rating: "設定した重要度で単語を絞り込んで見ることができます。"
           translate: "単語の意味を見ることができます(from Microsoft Translator API)。"
           memorize: "単語をおぼえたとき／忘れたときに押します。"
           log_out: "ログアウトを実行してトップページに戻ります。"
@@ -54,6 +55,8 @@ ja:
       wordrobe:
         message:
           greeting: "<strong class=\"key\">h</strong>&nbsp;キーを押してください。"
-      oops_no_word:
-          title: "ごめん。"
-          body: "辞書に登録されていない単語です。"
+      error:
+        title: "あう。"
+        no_word: "辞書に登録されていない単語です。"
+        not_in_wordrobe: "棚に入っていない単語です。"
+        ms_is_not_available: "翻訳サービスが息してないみたい。"
