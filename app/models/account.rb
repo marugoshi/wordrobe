@@ -7,7 +7,7 @@ class Account < ActiveRecord::Base
   validates :first_name, :presence => true
   validates :last_name, :presence => true
 
-  attr_accessible :uid, :first_name, :last_name, :nickname
+  attr_accessible :uid, :first_name, :last_name, :nickname, :display_memorized, :show_profile, :comment
   attr_protected :created_at, :updated_at
 
   def save_with_omniauth!(auth)

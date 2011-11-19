@@ -7,7 +7,7 @@ class Wordrobe < ActiveRecord::Base
   validates :word_id, :presence => true
   validates :register_count, :presence => true
 
-  attr_accessible :account_id, :word_id, :register_count
+  attr_accessible :account_id, :word_id, :translated_count, :memorize, :rating
   attr_protected :created_at, :updated_at
 
   paginates_per 1

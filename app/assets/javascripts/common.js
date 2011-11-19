@@ -110,6 +110,7 @@ $(function() {
       $(document).unbind("keydown");
     },
     hidden: function () {
+      $("input#word").val("");
       bind_defalut_hotkeys();
     }
   });
