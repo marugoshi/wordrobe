@@ -4,7 +4,7 @@ $(function() {
     $(document).bind("keydown.a", "a", function() { add_modal(); });
     $(document).bind("keydown.right", "right", function() { next_page(); });
     $(document).bind("keydown.left", "left", function() { prev_page(); });
-    $(document).bind("keydown.r", "r", function() { toggle_memorize(); });
+    $(document).bind("keydown.m", "m", function() { toggle_memorize(); });
     $(document).bind("keydown.t", "t", function() { toggle_translate(); });
     // $(document).bind("keydown.p", "p", function() { history_modal(); });
     // $(document).bind("keydown.c", "c", function() { config_modal(); });
