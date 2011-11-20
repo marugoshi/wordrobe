@@ -1,16 +1,4 @@
 $(function() {
-  $("div#header div#picture a[rel=twipsy]").twipsy({
-    live: true,
-    offset: 0,
-    placement: 'below'
-  })
-
-  $("div#header div#link a[rel=twipsy]").twipsy({
-    live: true,
-    offset: 10,
-    placement: 'below'
-  })
-
   var bind_defalut_hotkeys = function() {
     $(document).bind("keydown.h", "h", function() { help_modal(); });
     $(document).bind("keydown.a", "a", function() { add_modal(); });
@@ -18,6 +6,8 @@ $(function() {
     $(document).bind("keydown.left", "left", function() { prev_page(); });
     $(document).bind("keydown.r", "r", function() { toggle_memorize(); });
     $(document).bind("keydown.t", "t", function() { toggle_translate(); });
+    // $(document).bind("keydown.p", "p", function() { history_modal(); });
+    // $(document).bind("keydown.c", "c", function() { config_modal(); });
     $(document).bind("keydown.l", "l", function() { log_out(); });
   }
 

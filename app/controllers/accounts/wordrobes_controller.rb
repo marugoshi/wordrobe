@@ -4,7 +4,6 @@ class Accounts::WordrobesController < ApplicationController
 
   def create_with_ajax
     word = Word.where("name = ?", params[:word]).first()
-
     unless word
       @title = t("accounts.wordrobes.error.title")
       @body = t("accounts.wordrobes.error.no_word")
@@ -12,49 +11,35 @@ class Accounts::WordrobesController < ApplicationController
     end
 
     word_belonged = current_account.wordrobes.where("word_id = ?", word.id).first()
-    word_belonged = Wordrobe.new(:account_id => current_account.id, :word_id => word.id) unless word_belonged
-    word_belonged.save!
-    @wordrobe = current_account.wordrobes.for_dashboard(params[:page])
-    render :partial => "accounts/wordrobes/wordrobe"
+    unless word_belonged
+      word_belonged = Wordrobe.new(:account_id => current_account.id, :word_id => word.id) 
+      word_belonged.save!
+    end
+    # TODO: implement for if already stored data
+
+    display_wordrobe(params[:page])
   end
 
   def wordrobes_with_ajax
-    @wordrobe = current_account.wordrobes.for_dashboard(params[:page])
-
-    unless @wordrobe
-      @title = t("accounts.wordrobes.error.title")
-      @body = t("accounts.wordrobes.error.not_in_wordrobe")
-      return render :partial => "accounts/wordrobes/error"
-    end
-
-    render :partial => "accounts/wordrobes/wordrobe"
-    end
+    display_wordrobe(params[:page])
+  end
 
   def toggle_memorize_with_ajax
-    word_belonged = current_account.wordrobes.where("wordrobes.id = ?", params[:id]).first()
-
-    unless word_belonged
-      @title = t("accounts.wordrobes.error.title")
-      @body = t("accounts.wordrobes.error.not_in_wordrobe")
-      return render :partial => "accounts/wordrobes/error"
+    word_belonged = get_word_belonged
+    unless word_belonged.memorize?
+      word_belonged.memorize = true
+      word_belonged.memorized_at = Time.now
+      word_belonged.save!
     end
+    # TODO: implement for if already memorized data
 
-    word_belonged.memorize = !word_belonged.memorize?
-    word_belonged.save!
-    @wordrobe = current_account.wordrobes.for_dashboard(params[:page])
-    render :partial => "accounts/wordrobes/wordrobe"
+    display_wordrobe(params[:page])
   end
 
   def toggle_translate_with_ajax
-    word_belonged = current_account.wordrobes.where("wordrobes.id = ?", params[:id]).first()
+    word_belonged = get_word_belonged
 
-    unless word_belonged
-      @title = t("accounts.wordrobes.error.title")
-      @body = t("accounts.wordrobes.error.not_in_wordrobe")
-      return render :partial => "accounts/wordrobes/error"
-    end
-
-    if params[:translated] == "true"
+    if params[:translated] == "true" && !word_belonged.memorized_at
       begin
         response = RestClient.get Settings.translate_url, :params => Settings.translated_params.merge(:text => word_belonged.word.name)
       rescue
@@ -67,8 +52,28 @@ class Accounts::WordrobesController < ApplicationController
       word_belonged.save!
     end
 
-    @wordrobe = current_account.wordrobes.for_dashboard(params[:page])
+    display_wordrobe(params[:page])
+  end
+
+  private
+  def display_wordrobe(page=0)
+    @wordrobe = current_account.wordrobes.for_dashboard(page)
+    unless @wordrobe
+      @title = t("accounts.wordrobes.error.title")
+      @body = t("accounts.wordrobes.error.not_in_wordrobe")
+      return render :partial => "accounts/wordrobes/error"
+    end
     render :partial => "accounts/wordrobes/wordrobe"
+  end
+
+  def get_word_belonged
+    word_belonged = current_account.wordrobes.where("wordrobes.id = ?", params[:id]).first()
+    unless word_belonged
+      @title = t("accounts.wordrobes.error.title")
+      @body = t("accounts.wordrobes.error.not_in_wordrobe")
+      return render :partial => "accounts/wordrobes/error"
+    end
+    word_belonged
   end
 
   # def rating_with_ajax

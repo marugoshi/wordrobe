@@ -14,7 +14,8 @@
 ActiveRecord::Schema.define(:version => 20111022184532) do
 
   create_table "accounts", :force => true do |t|
-    t.string   "uid",                                 :null => false
+    t.string   "facebook_uid",                        :null => false
+    t.string   "twitter_uid"
     t.string   "first_name",                          :null => false
     t.string   "last_name",                           :null => false
     t.string   "nickname"
@@ -27,10 +28,11 @@ ActiveRecord::Schema.define(:version => 20111022184532) do
   end
 
   add_index "accounts", ["created_at"], :name => "index_accounts_on_created_at"
+  add_index "accounts", ["facebook_uid"], :name => "index_accounts_on_facebook_uid", :unique => true
   add_index "accounts", ["first_name"], :name => "index_accounts_on_first_name"
   add_index "accounts", ["last_name"], :name => "index_accounts_on_last_name"
   add_index "accounts", ["nickname"], :name => "index_accounts_on_nickname"
-  add_index "accounts", ["uid"], :name => "index_accounts_on_uid", :unique => true
+  add_index "accounts", ["twitter_uid"], :name => "index_accounts_on_twitter_uid", :unique => true
   add_index "accounts", ["updated_at"], :name => "index_accounts_on_updated_at"
 
   create_table "wordrobes", :force => true do |t|
@@ -39,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20111022184532) do
     t.integer  "translated_count", :default => 0,     :null => false
     t.boolean  "memorize",         :default => false
     t.integer  "rating"
+    t.datetime "memorized_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
