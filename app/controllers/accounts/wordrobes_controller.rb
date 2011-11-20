@@ -3,21 +3,23 @@ class Accounts::WordrobesController < ApplicationController
   autocomplete :word, :name, :limit => 17
 
   def create_with_ajax
+    page = params[:page]
+
     word = Word.where("name = ?", params[:word]).first()
     unless word
-      @title = t("accounts.wordrobes.error.title")
-      @body = t("accounts.wordrobes.error.no_word")
-      return render :partial => "accounts/wordrobes/error"
+      @error = t("layouts.error_modal.message.no_word")
+    else
+      word_belonged = current_account.wordrobes.where("word_id = ?", word.id).first()
+      if word_belonged
+        @error = t("layouts.error_modal.message.already_in_wordrobe")
+      else
+        page = 0
+        word_belonged = Wordrobe.new(:account_id => current_account.id, :word_id => word.id) 
+        word_belonged.save!
+      end
     end
 
-    word_belonged = current_account.wordrobes.where("word_id = ?", word.id).first()
-    unless word_belonged
-      word_belonged = Wordrobe.new(:account_id => current_account.id, :word_id => word.id) 
-      word_belonged.save!
-    end
-    # TODO: implement for if already stored data
-
-    display_wordrobe(params[:page])
+    display_wordrobe(page)
   end
 
   def wordrobes_with_ajax
@@ -26,12 +28,13 @@ class Accounts::WordrobesController < ApplicationController
 
   def toggle_memorize_with_ajax
     word_belonged = get_word_belonged
-    unless word_belonged.memorize?
+    if word_belonged.memorize?
+      @error = t("layouts.error_modal.message.already_memorzied")
+    else
       word_belonged.memorize = true
       word_belonged.memorized_at = Time.now
       word_belonged.save!
     end
-    # TODO: implement for if already memorized data
 
     display_wordrobe(params[:page])
   end
@@ -39,18 +42,23 @@ class Accounts::WordrobesController < ApplicationController
   def toggle_translate_with_ajax
     word_belonged = get_word_belonged
 
-    if params[:translated] == "true" && !word_belonged.memorized_at
-      begin
-        response = RestClient.get Settings.translate_url, :params => Settings.translated_params.merge(:text => word_belonged.word.name)
-      rescue
-        @title = t("accounts.wordrobes.error.title")
-        @body = t("accounts.wordrobes.error.ms_is_not_available")
-        return render :partial => "accounts/wordrobes/error"
+    if word_belonged.memorize?
+      @error = t("layouts.error_modal.message.already_translated")
+    else
+      if params[:translated] == "true"
+        begin
+          response = RestClient.get Settings.translate_url, :params => Settings.translated_params.merge(:text => word_belonged.word.name)
+        rescue
+          @fatal_error_title = t("accounts.wordrobes.error.title")
+          @fatal_error_body = t("accounts.wordrobes.error.ms_is_not_available")
+          return render :partial => "accounts/wordrobes/error"
+        end
+        @translated = Nokogiri::XML(response).child.child.to_html()
+        word_belonged.translated_count += 1
+        word_belonged.save!
       end
-      @translated = Nokogiri::XML(response).child.child.to_html()
-      word_belonged.translated_count += 1
-      word_belonged.save!
     end
+
 
     display_wordrobe(params[:page])
   end
@@ -59,8 +67,8 @@ class Accounts::WordrobesController < ApplicationController
   def display_wordrobe(page=0)
     @wordrobe = current_account.wordrobes.for_dashboard(page)
     unless @wordrobe
-      @title = t("accounts.wordrobes.error.title")
-      @body = t("accounts.wordrobes.error.not_in_wordrobe")
+      @fatal_error_title = t("accounts.wordrobes.error.title")
+      @fatal_error_body = t("accounts.wordrobes.error.not_in_wordrobe")
       return render :partial => "accounts/wordrobes/error"
     end
     render :partial => "accounts/wordrobes/wordrobe"
@@ -69,8 +77,8 @@ class Accounts::WordrobesController < ApplicationController
   def get_word_belonged
     word_belonged = current_account.wordrobes.where("wordrobes.id = ?", params[:id]).first()
     unless word_belonged
-      @title = t("accounts.wordrobes.error.title")
-      @body = t("accounts.wordrobes.error.not_in_wordrobe")
+      @fatal_error_title = t("accounts.wordrobes.error.title")
+      @fatal_error_body = t("accounts.wordrobes.error.not_in_wordrobe")
       return render :partial => "accounts/wordrobes/error"
     end
     word_belonged

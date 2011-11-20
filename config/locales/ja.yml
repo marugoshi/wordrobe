@@ -42,6 +42,13 @@ ja:
       message:
         title: "単語を追加する"
         intro: "おぼえられない単語を書いて追加しましょう。"
+    error_modal:
+      message:
+        title: "あう。"
+        no_word: "辞書に登録されていない単語です。"
+        already_in_wordrobe: "すでに棚に入っている単語です。"
+        already_memorzied: "すでに覚えているみたいです。"
+        already_translated: "すでに覚えている単語の訳は見れません。"
 
   static:
     welcome:
@@ -57,6 +64,5 @@ ja:
           greeting: "<strong class=\"key\">h</strong>&nbsp;キーを押してください。"
       error:
         title: "あう。"
-        no_word: "辞書に登録されていない単語です。"
         not_in_wordrobe: "棚に入っていない単語です。"
         ms_is_not_available: "翻訳サービスが息してないみたい。"

@@ -24,9 +24,16 @@ $(function() {
     $("div#add").modal({ show: true, keyboard: true, backdrop: true });
   }
 
+  var error_modal = function() {
+    $("div#error").modal({ show: true, keyboard: true, backdrop: true });
+  }
+
   var switch_wordrobe = function(data) {
     $("div#heart").fadeOut("slow", function() {
       $("div#wordrobe").html(data);
+      if ($("input#error").val()) {
+        error_modal();
+      }
       $("div#heart").hide().fadeIn("slow");
     });
   }
@@ -115,6 +122,17 @@ $(function() {
     }
   });
 
+  // bind event to error modal
+  $("div#error").bind({
+    shown: function() {
+      $(document).unbind("keydown");
+      $("div#error p#message").text($("input#error").val());
+    },
+    hidden: function () {
+      bind_defalut_hotkeys();
+    }
+  });
+
   // bind event to add form input
   $("input#word").bind(
     "keydown", "return", function() {
@@ -122,22 +140,21 @@ $(function() {
     }
   );
 
-  // when help link clicked
-  $("a#help_link").click(function() {
-    help_modal();
-    return false;
-  });
-
   // when add button clicked
   $("input#add_button").click(function() {
+    var page = parseInt($("input#page").val());
+    var word = $("input#word").val();
     $.ajax({
       type: "POST",
-      url: "/accounts/wordrobes",
-      data: $("#add_form").serialize(),
+      url: "/accounts/wordrobes?page=" + page + "&word=" + word,
       success: function(data) {
         $("input#word").val("");
         $("div#add").modal("hide");
         $("div#wordrobe").html(data);
+
+        if ($("input#error").val()) {
+          error_modal();
+        }
       }
     });
   });
