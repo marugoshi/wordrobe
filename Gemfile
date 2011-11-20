@@ -35,3 +35,6 @@ group :development, :test do
   # gem "rails3-generators"
   # gem "ruby-debug19", :require => "ruby-debug"
 end
+
+LANG="en_US.UTF-8"
+LC_ALL="en_US.UTF-8"
