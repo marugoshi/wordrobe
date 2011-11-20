@@ -142,11 +142,10 @@ $(function() {
 
   // when add button clicked
   $("input#add_button").click(function() {
-    var page = parseInt($("input#page").val());
     var word = $("input#word").val();
     $.ajax({
       type: "POST",
-      url: "/accounts/wordrobes?page=" + page + "&word=" + word,
+      url: "/accounts/wordrobes?word=" + word,
       success: function(data) {
         $("input#word").val("");
         $("div#add").modal("hide");

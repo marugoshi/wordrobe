@@ -3,8 +3,6 @@ class Accounts::WordrobesController < ApplicationController
   autocomplete :word, :name, :limit => 17
 
   def create_with_ajax
-    page = params[:page]
-
     word = Word.where("name = ?", params[:word]).first()
     unless word
       @error = t("layouts.error_modal.message.no_word")
@@ -13,17 +11,15 @@ class Accounts::WordrobesController < ApplicationController
       if word_belonged
         @error = t("layouts.error_modal.message.already_in_wordrobe")
       else
-        page = 0
         word_belonged = Wordrobe.new(:account_id => current_account.id, :word_id => word.id) 
         word_belonged.save!
       end
     end
-
-    display_wordrobe(page)
+    display_wordrobe
   end
 
   def wordrobes_with_ajax
-    display_wordrobe(params[:page])
+    display_wordrobe
   end
 
   def toggle_memorize_with_ajax
@@ -35,8 +31,7 @@ class Accounts::WordrobesController < ApplicationController
       word_belonged.memorized_at = Time.now
       word_belonged.save!
     end
-
-    display_wordrobe(params[:page])
+    display_wordrobe
   end
 
   def toggle_translate_with_ajax
@@ -58,14 +53,12 @@ class Accounts::WordrobesController < ApplicationController
         word_belonged.save!
       end
     end
-
-
-    display_wordrobe(params[:page])
+    display_wordrobe
   end
 
   private
-  def display_wordrobe(page=0)
-    @wordrobe = current_account.wordrobes.for_dashboard(page)
+  def display_wordrobe
+    @wordrobe = current_account.wordrobes.for_dashboard(params[:page])
     unless @wordrobe
       @fatal_error_title = t("accounts.wordrobes.error.title")
       @fatal_error_body = t("accounts.wordrobes.error.not_in_wordrobe")
