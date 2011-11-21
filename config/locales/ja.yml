@@ -34,7 +34,7 @@ ja:
           navigate: "登録した単語を見ることができます。"
           rating: "設定した重要度で単語を絞り込んで見ることができます。"
           translate: "単語の意味を見ることができます(from Microsoft Translator API)。"
-          memorize: "単語をおぼえたとき／忘れたときに押します。"
+          memorize: "単語をおぼえたときに押します。訳が見れなくなります。忘れることはできません。"
           log_out: "ログアウトを実行してトップページに戻ります。"
       label:
         under_construction: "準備中"
