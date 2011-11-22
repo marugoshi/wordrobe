@@ -21,5 +21,11 @@ class Wordrobe < ActiveRecord::Base
   scope :updated_desc, order("updated_at DESC")
 
   # scope :for_list, joins(:word).alphabet_asc.limit(20)
-  scope :for_dashboard, lambda { |page| created_desc.page(page) }
+  scope :for_dashboard, lambda { |x|
+    if x
+      x = page.num_pages if x.to_i > page.num_pages
+      x = 1 if x.to_i < 1
+    end
+    created_desc.page(x)
+  }
 end

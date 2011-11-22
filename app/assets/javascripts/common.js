@@ -4,6 +4,8 @@ $(function() {
     $(document).bind("keydown.a", "a", function() { add_modal(); });
     $(document).bind("keydown.right", "right", function() { next_page(); });
     $(document).bind("keydown.left", "left", function() { prev_page(); });
+    $(document).bind("keydown.Shift+right", "Shift+right", function() { next_page(10); });
+    $(document).bind("keydown.Shift+left", "Shift+left", function() { prev_page(10); });
     $(document).bind("keydown.m", "m", function() { toggle_memorize(); });
     $(document).bind("keydown.up", "up", function() { toggle_translate(); });
     // $(document).bind("keydown.p", "p", function() { history_modal(); });
@@ -38,9 +40,12 @@ $(function() {
     });
   }
 
-  var next_page = function() {
+  var next_page = function(add_pages) {
     if ($("input#last_page").val() == "false") {
       var page = parseInt($("input#page").val());
+      if (add_pages) {
+        page += add_pages;
+      }
       $.ajax({
         type: "GET",
         url: "/accounts/wordrobes/wordrobes?page=" + (page + 1),
@@ -51,9 +56,12 @@ $(function() {
     }
   }
 
-  var prev_page = function() {
+  var prev_page = function(minus_pages) {
     if ($("input#first_page").val() == "false") {
       var page = parseInt($("input#page").val());
+      if (minus_pages) {
+        page -= minus_pages;
+      }
       $.ajax({
         type: "GET",
         url: "/accounts/wordrobes/wordrobes?page=" + (page - 1),
