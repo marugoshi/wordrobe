@@ -1,0 +1,23 @@
+<div id="privacy" class="modal hide fade my_modal">
+  <div class="modal-header">
+    <a href="#" class="close">&times;</a>
+    <h3><%= t(".message.title") %></h3>
+  </div>
+  <div class="modal-body">
+    <p><%= t(".message.subject.your_data") %></p>
+    <ul>
+      <li><%= t(".message.body.facebook_id") %></li>
+      <li><%= t(".message.body.facebook_nickname") %></li>
+      <li><%= t(".message.body.facebook_name") %></li>
+      <li><%= t(".message.body.wordrobes") %></li>
+    </ul>
+    <p><%= t(".message.subject.not_stored_data") %></p>
+    <ul>
+      <li><%= t(".message.body.privacy_items") %></li>
+    </ul>
+    <p><%= simple_format t(".message.subject.withdraw") %></p>
+    <ul>
+      <li><a href="#" id="withdraw_link"><%=t(".message.link.withdraw") %></a>&nbsp;<span class="label important"><%=t(".label.withdraw") %></span></li>
+    </ul>
+  </div>
+</div><!-- /#help -->

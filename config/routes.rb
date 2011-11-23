@@ -5,6 +5,7 @@ Reaper::Application.routes.draw do
 
   match "/" => "static#welcome", :as => "welcome", :via => :get
   match "/dashboard" => "accounts#dashboard", :as => "dashboard", :via => :get
+  match "/accounts" => "accounts#destroy_with_ajax", :as => "goodby", :via => :delete
 
   namespace :accounts do
     resources :wordrobes, :except => [:index, :show, :new, :create, :edit, :update, :destroy] do

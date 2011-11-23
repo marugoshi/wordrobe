@@ -15,8 +15,8 @@ common/user.png: common/user-57018e4710c4d2ad4fc7d337872d0c22.png
 forgot.png: forgot-b4f04e68698091f6052d87338de1101c.png
 memorized.png: memorized-00358b62a7a998866216e47650d8cddf.png
 stickies.png: stickies-b44c596374a13453b8b5f73a9f96a729.png
-application.js: application-2a179d6165291e54732884a95c7d6ba6.js
-application.css: application-1f99e951665603d415016d5695c523f8.css
+application.js: application-368c2665bf5e86b44f2cffbd02f7717f.js
+application.css: application-8492b26c661b33d650c6e7399b96864d.css
 jquery-ui/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png: jquery-ui/smoothness/images/ui-bg_flat_0_aaaaaa_40x100-1d2313f878d5d7993bbbf49420044cb2.png
 jquery-ui/smoothness/images/ui-bg_flat_75_ffffff_40x100.png: jquery-ui/smoothness/images/ui-bg_flat_75_ffffff_40x100-a38207380184c4300f2d410086af50da.png
 jquery-ui/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png: jquery-ui/smoothness/images/ui-bg_glass_55_fbf9ee_1x400-a183ba42bb9fd4b5efc177d9201dcb3b.png

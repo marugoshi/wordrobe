@@ -1,48 +1,44 @@
 ja:
-  # common
-  wordrobe:
-    button:
-      create: "追加"
-      remove: "削除"
-      memorize: "おぼえた！"
-      forget: "わすれた！"
-      facebook: "facebookで報告"
-      twitter: "twitterで報告"
-
-  # model
-
-  # model label
-
   # controller & view
   layouts:
-    header:
+    application:
       link:
-        profile: "%{nickname}さんのプロフィール"
         help: "ヘルプ"
         history: "履歴"
         config: "設定"
+        privacy: "プライバシーについて"
         log_out: "ログアウト"
     help_modal:
       message:
         title: "ヘルプ"
-        intro: "以下のキーを押して、操作することができます。"
+        subject:
+          hotkey: "以下のキーを押して、操作することができます。"
+          history: "単語を一覧で見たい、入れた単語を消したい。"
+          config: "覚えてない単語だけを見たい。"
+          quit: "どんなデータをとられてるのかわからないし、やめたい。"
         body:
           help: "このヘルプを表示します。わからなくなったらとりあえず押しましょう。"
           add: "単語を追加するためのウインドウを表示します。"
           past: "今までに登録したり、覚えたりした単語の履歴ページに移動します。"
           config: "アプリの設定ページに移動します。"
           navigate_per_one: "登録した単語を1つずつ見ることができます。"
-          navigate_per_ten: "登録した単語を10こ飛ばして見ることができます。"
+          navigate_per_ten: "登録した単語を10個飛ばして見ることができます。"
           rating: "設定した重要度で単語を絞り込んで見ることができます。"
           translate: "単語の意味を見ることができます(from Microsoft Translator API)。"
           memorize: "単語をおぼえたときに押します。訳が見れなくなります。忘れることはできません。"
           log_out: "ログアウトを実行してトップページに戻ります。"
+          history: "下のメニューにある履歴をクリックしてください。"
+          config: "下のメニューにある設定をクリックしてください。"
+          quit: "下のメニューにあるプライバシーについてからリンクを辿ってください。"
       label:
         under_construction: "準備中"
+        withdraw: "即時実行されます"
     add_modal:
       message:
         title: "単語を追加する"
         intro: "おぼえられない単語を書いて追加しましょう。"
+      button:
+        create: "追加"
     error_modal:
       message:
         title: "あう。"
@@ -50,6 +46,25 @@ ja:
         already_in_wordrobe: "すでに棚に入っている単語です。"
         already_memorzied: "すでに覚えているみたいです。"
         already_translated: "すでに覚えている単語の訳は見れません。"
+    privacy_modal:
+      message:
+        title: "プライバシーについて"
+        subject:
+          your_data: "このサイトでは、あなたに関する以下のデータを保持します。"
+          not_stored_data: "以下のような情報は、保持していません。"
+          withdraw: |-
+            退会は以下のリンクから行うことができます。
+            退会すると、上記で記載したあなたに関するデータをすべて削除します。
+            登録していた単語のデータもすべて消去されますのでご注意ください。
+        link:
+          withdraw: "退会する"
+        body:
+          facebook_nickname: "FaceBookに登録されたニックネーム"
+          facebook_name: "FaceBookに登録された氏名"
+          wordrobes: "サイト上で登録した単語"
+          privacy_items: "FaceBookパスワード、生年月日、メールアドレスなど、上記に記載していないすべての個人情報"
+      label:
+        withdraw: "即時実行されます"
 
   static:
     welcome:

@@ -4,7 +4,7 @@
     <h3><%= t(".message.title") %></h3>
   </div>
   <div class="modal-body">
-    <p><%= t(".message.intro") %></p>
+    <p><%= t(".message.subject.hotkey") %></p>
     <ul>
       <li><strong class="key">h</strong>&nbsp;<%= t(".message.body.help") %></li>
       <li><strong class="key">a</strong>&nbsp;<%= t(".message.body.add") %></li>
@@ -12,10 +12,18 @@
       <li><strong class="key">&#8593;</strong>&nbsp;<%= t(".message.body.translate") %></li>
       <li><strong class="key">&#8592;</strong>&nbsp;or&nbsp;<strong class="key">&#8594;</strong>&nbsp;<%= t(".message.body.navigate_per_one") %></li>
       <li><strong class="key">shift</strong>&nbsp;+&nbsp;<strong class="key">&#8592;</strong>&nbsp;or&nbsp;<strong class="key">shift</strong>&nbsp;+&nbsp;<strong class="key">&#8594;</strong>&nbsp;<%= t(".message.body.navigate_per_ten") %></li>
-      <li><strong class="key">1</strong>&nbsp;-&nbsp;<strong class="key">5</strong>&nbsp;<%= t(".message.body.rating") %><span class="label important"><%= t(".label.under_construction") %></span></li>
-      <li><strong class="key">p</strong>&nbsp;<%= t(".message.body.past") %><span class="label important"><%= t(".label.under_construction") %></span></li>
-      <li><strong class="key">c</strong>&nbsp;<%= t(".message.body.config") %><span class="label important"><%= t(".label.under_construction") %></span></li>
-      <li><strong class="key">l</strong>&nbsp;<%= t(".message.body.log_out") %></li>
+    </ul>
+    <p><%= t(".message.subject.history") %></p>
+    <ul>
+      <li><%= t(".message.body.history") %>&nbsp;<span class="label"><%= t(".label.under_construction") %></span></li>
+    </ul>
+    <p><%= t(".message.subject.config") %></p>
+    <ul>
+      <li><%= t(".message.body.config") %>&nbsp;<span class="label"><%= t(".label.under_construction") %></span></li>
+    </ul>
+    <p><%= t(".message.subject.quit") %></p>
+    <ul>
+      <li><%= t(".message.body.quit") %></li>
     </ul>
   </div>
 </div><!-- /#help -->

@@ -10,13 +10,6 @@
 <div id="<%= controller_name + "_" + action_name %>" class="<%= controller_name %> <%= action_name %>">
   <div id="header">
     <div class="container">
-      <div id="menu">
-        <% if current_account %>
-          <%= render :partial => "layouts/help_modal" %>
-          <%= render :partial => "layouts/add_modal" %>
-          <%= render :partial => "layouts/error_modal" %>
-        <% end %>
-      </div><!-- /#menu -->
       <h1 id="logo"><%= link_to "Wordrobe", welcome_path %></h1>
     </div><!-- /.container -->
   </div><!-- /#header -->
@@ -25,9 +18,27 @@
 
   <div id="footer">
     <div class="container">
+      <div id="link">
+        <% if current_account %>
+          <a href="#" id="history_link" title="<%= t(".link.history") %>"><%= t(".link.history") %></a>
+          <a href="#" id="config_link" title="<%= t(".link.config") %>"><%= t(".link.config") %></a>
+          <a href="#" id="help_link" title="<%= t(".link.help") %>"><%= t(".link.help") %></a>
+        <% end %>
+        <a href="#" id="privacy_link" title="<%= t(".link.privacy") %>"><%= t(".link.privacy") %></a>
+        <% if current_account %>
+          <%= link_to t(".link.log_out"), log_out_path, :method => :delete %>
+        <% end %>
+      </div>
       <div id="copyright">&copy; MARUGOSHI.ORG</div>
     </div><!-- /.container -->
   </div><!-- /#footer -->
 </div><!-- /#<%= controller_name + "_" + action_name %> .<%= controller_name %> .<%= action_name %> -->
+
+<%= render :partial => "layouts/privacy_modal" %>
+<% if current_account %>
+  <%= render :partial => "layouts/help_modal" %>
+  <%= render :partial => "layouts/add_modal" %>
+  <%= render :partial => "layouts/error_modal" %>
+<% end %>
 </body>
 </html>

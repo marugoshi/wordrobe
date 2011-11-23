@@ -10,7 +10,6 @@ $(function() {
     $(document).bind("keydown.up", "up", function() { toggle_translate(); });
     // $(document).bind("keydown.p", "p", function() { history_modal(); });
     // $(document).bind("keydown.c", "c", function() { config_modal(); });
-    $(document).bind("keydown.l", "l", function() { log_out(); });
   }
 
   var bind_history_hotkeys = function() {
@@ -28,6 +27,10 @@ $(function() {
 
   var error_modal = function() {
     $("div#error").modal({ show: true, keyboard: true, backdrop: true });
+  }
+
+  var privacy_modal = function() {
+    $("div#privacy").modal({ show: true, keyboard: true, backdrop: true });
   }
 
   var switch_wordrobe = function(data) {
@@ -99,16 +102,6 @@ $(function() {
     }    
   }
 
-  var log_out = function() {
-    $.ajax({
-      type: "DELETE",
-      url: "/log_out",
-      success: function() {
-        window.location.href = "/";
-      }
-    });
-  }
-
   // bind event to help modal
   $("div#help").bind({
     shown: function() {
@@ -147,6 +140,26 @@ $(function() {
       return false;
     }
   );
+
+  $("a#privacy_link").click(function() {
+    privacy_modal();
+    return false;
+  });
+
+  $("a#help_link").click(function() {
+    help_modal();
+    return false;
+  });
+
+  $("a#withdraw_link").click(function() {
+    $.ajax({
+      type: "DELETE",
+      url: "/accounts",
+      success: function() {
+        window.location.href = "/";
+      }
+    });
+  });
 
   // when add button clicked
   $("input#add_button").click(function() {

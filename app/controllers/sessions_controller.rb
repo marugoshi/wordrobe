@@ -15,6 +15,6 @@ class SessionsController < ApplicationController
 
   def destroy_with_ajax
     session[:account_id] = nil
-    render :text => "true"
+    redirect_to welcome_path
   end
 end
