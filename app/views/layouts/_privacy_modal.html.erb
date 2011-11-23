@@ -15,9 +15,13 @@
     <ul>
       <li><%= t(".message.body.privacy_items") %></li>
     </ul>
-    <p><%= simple_format t(".message.subject.withdraw") %></p>
-    <ul>
-      <li><a href="#" id="withdraw_link"><%=t(".message.link.withdraw") %></a>&nbsp;<span class="label important"><%=t(".label.withdraw") %></span></li>
-    </ul>
+    <% if current_account %>
+      <p><%= simple_format t(".message.subject.withdraw_for_user") %></p>
+      <ul>
+        <li><a href="#" id="withdraw_link"><%=t(".message.link.withdraw") %></a>&nbsp;<span class="label important"><%=t(".label.withdraw") %></span></li>
+      </ul>
+    <% else %>
+      <p><%= simple_format t(".message.subject.withdraw_for_guest") %></p>
+    <% end %>
   </div>
 </div><!-- /#help -->
