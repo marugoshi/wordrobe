@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 class Account < ActiveRecord::Base
-  has_many :wordrobes, :dependent => :destroy
-  has_many :words, :through => :wordrobes
+  has_many :word_containers, :dependent => :destroy
+  has_many :words, :through => :word_containers
 
   validates :facebook_uid, :presence => true
   validates :first_name, :presence => true

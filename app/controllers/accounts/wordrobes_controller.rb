@@ -7,11 +7,11 @@ class Accounts::WordrobesController < ApplicationController
     unless word
       @error = t("layouts.error_modal.message.no_word")
     else
-      word_belonged = current_account.wordrobes.where("word_id = ?", word.id).first()
+      word_belonged = current_account.word_containers.where("word_id = ?", word.id).first()
       if word_belonged
         @error = t("layouts.error_modal.message.already_in_wordrobe")
       else
-        word_belonged = Wordrobe.new(:account_id => current_account.id, :word_id => word.id) 
+        word_belonged = WordContainer.new(:account_id => current_account.id, :word_id => word.id) 
         word_belonged.save!
       end
     end
@@ -58,7 +58,7 @@ class Accounts::WordrobesController < ApplicationController
 
   private
   def display_wordrobe
-    @wordrobe = current_account.wordrobes.for_dashboard(params[:page])
+    @wordrobe = current_account.word_containers.for_dashboard(params[:page])
     unless @wordrobe
       @fatal_error_title = t("accounts.wordrobes.error.title")
       @fatal_error_body = t("accounts.wordrobes.error.not_in_wordrobe")
@@ -68,7 +68,7 @@ class Accounts::WordrobesController < ApplicationController
   end
 
   def get_word_belonged
-    word_belonged = current_account.wordrobes.where("wordrobes.id = ?", params[:id]).first()
+    word_belonged = current_account.word_containers.where("word_containers.id = ?", params[:id]).first()
     unless word_belonged
       @fatal_error_title = t("accounts.wordrobes.error.title")
       @fatal_error_body = t("accounts.wordrobes.error.not_in_wordrobe")

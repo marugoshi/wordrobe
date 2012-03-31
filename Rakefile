@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Reaper::Application.load_tasks
+Wordrobe::Application.load_tasks

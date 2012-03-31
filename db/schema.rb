@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20111022184532) do
   add_index "accounts", ["twitter_uid"], :name => "index_accounts_on_twitter_uid", :unique => true
   add_index "accounts", ["updated_at"], :name => "index_accounts_on_updated_at"
 
-  create_table "wordrobes", :force => true do |t|
+  create_table "word_containers", :force => true do |t|
     t.integer  "account_id",                          :null => false
     t.integer  "word_id",                             :null => false
     t.integer  "translated_count", :default => 0,     :null => false
@@ -46,9 +46,9 @@ ActiveRecord::Schema.define(:version => 20111022184532) do
     t.datetime "updated_at"
   end
 
-  add_index "wordrobes", ["account_id", "word_id"], :name => "index_wordrobes_on_account_id_and_word_id", :unique => true
-  add_index "wordrobes", ["created_at"], :name => "index_wordrobes_on_created_at"
-  add_index "wordrobes", ["updated_at"], :name => "index_wordrobes_on_updated_at"
+  add_index "word_containers", ["account_id", "word_id"], :name => "index_word_containers_on_account_id_and_word_id", :unique => true
+  add_index "word_containers", ["created_at"], :name => "index_word_containers_on_created_at"
+  add_index "word_containers", ["updated_at"], :name => "index_word_containers_on_updated_at"
 
   create_table "words", :force => true do |t|
     t.string   "name",       :null => false

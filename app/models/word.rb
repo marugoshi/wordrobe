@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 class Word < ActiveRecord::Base
-  has_many :wordrobes
-  has_many :accounts, :through => :wordrobes
+  has_many :word_containers
+  has_many :accounts, :through => :word_containers
 
   validates :name, :presence => true
 
